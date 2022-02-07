@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<context:property-placeholder location="classpath:config/props/database.properties"/>
+	
+	<bean destroy-method="close" class="org.apache.commons.dbcp2.BasicDataSource"
+	id="dataSource-oracle">
+		<property name="driverClassName" value="${Global.DriverClassName}"/>
+		<property name="url" value="${Global.Url}"/>
+		<property name="username" value="${Global.Username}"/>
+		<property name="password" value="${Global.Password}"/>
+	</bean>
+	
+	<!-- SqlSessionFactoryBean 등록 -->
+	<bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource-oracle"/>
+		<property name="configLocation" value="classpath:config/mybatis/mybatis-config.xml"/>
+	</bean>
+	
+	<!-- SqlSessionTemplate 등록 -->
+	<bean class="org.mybatis.spring.SqlSessionTemplate" id="sqlSessionTemplate">
+		<constructor-arg ref="sqlSessionFactoryBean"/>
+	</bean>
+	
+	<mybatis-spring:scan base-package="com.mympm.mapper"/>
+</beans>
