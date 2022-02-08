@@ -145,21 +145,21 @@ footer {
 
 }
 .repeat-bt{
-    background-image: url(images/repeat.png);
+    background-image: url(../img/repeat.png);
     width: 24px;
     height: 24px;
     border: none;
     margin: 0 25px 0 25px;
 }
 .previous-bt{
-    background-image: url(images/previous.png);
+    background-image: url(../img/previous.png);
     width: 24px;
     height: 24px;
     border: none;
     margin: 0 25px 0 25px;
 }
 .play-bt{
-    background-image: url(images/play.png);
+    background-image: url(../img/play.png);
     width: 34px;
     height: 34px;
     border: none;
@@ -167,14 +167,14 @@ footer {
     margin: 0 25px 0 25px;
 }
 .next-bt{
-    background-image: url(images/next.png);
+    background-image: url(../img/next.png);
     width: 24px;
     height: 24px;
     border: none;
     margin: 0 25px 0 25px;
 }
 .shuffle-bt{
-    background-image: url(images/shuffle-arrows.png);
+    background-image: url(../img/shuffle-arrows.png);
     width: 24px;
     height: 24px;
     border: none;
@@ -186,7 +186,7 @@ button{
     outline: none;
 }
 .sound-bt{
-    background-image: url(images/sound.png);
+    background-image: url(../img/sound.png);
     width: 32px;
     height: 32px;
     border: none;
@@ -195,7 +195,7 @@ button{
 }
 
 .heart-bt{
-    background-image: url(images/heart.png);
+    background-image: url(../img/heart.png);
     width: 32px;
     height: 32px;
     border: none;
@@ -203,7 +203,7 @@ button{
     background-size : cover;
 }
 .list-bt{
-    background-image: url(images/list.png);
+    background-image: url(../img/list.png);
     width: 60px;
     height: 60px;
     border: none;
