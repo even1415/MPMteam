@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+
+.container{
+    text-align: center;
+    margin: auto 11.333%;
+    height: 550px;
+}
+.nth1{
+    margin-top: 20px;
+}
+.container #ntcontent1{
+    width: 1000px;
+    height: 350px;
+    margin: 5px 15px 0 15px;
+}
+.nttable2{
+    margin-left: 65px;
+    margin-right: 65px;
+    margin-top: 20px;
+}
+#ntedit{
+    float: right;
+    height: 27px;
+    width: 70px;
+}
+#ntdelete{
+    height: 27px;
+    width: 70px;
+    float: right;
+    margin: 0 15px 0 15px;
+}

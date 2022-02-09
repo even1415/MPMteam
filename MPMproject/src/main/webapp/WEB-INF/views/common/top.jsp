@@ -13,16 +13,24 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
+<script>
+$(function(){
+	  $('#notice').click(function(){
+		 	location.href = 'board/boardList'
+	  })
+	  
+})
+</script>
 <body>
     <div class="wrap">
         <!--header----------------------------------------------------->
         <header class="header">
             <div class="logo">
-                <a href="#"><img src="${pageContext.request.contextPath}/resources/img/logo.png"></a>
+                <a href="${pageContext.request.contextPath}"><img src="${pageContext.request.contextPath}/resources/img/logo.png"></a>
             </div>
             <nav class="nav">
                 <div class="notice">
-                    <a href="#">공지사항</a>
+                    <a href="#" id="notice">공지사항</a>
                 </div>
                 <div class="music">
                     <a href="#">음원차트</a>

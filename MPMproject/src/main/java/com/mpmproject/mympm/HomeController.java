@@ -19,7 +19,7 @@ public class HomeController {
 	@RequestMapping("common/carousel")
 	public void carouselView() {}
 
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/")
 	public String facadeView() {
 		return "home";
 	}
