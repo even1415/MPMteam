@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<script src="//cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
+<!-- <script src="//cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script> -->
 <c:import url="/common/top"/>
 <div class="container-fluid">
 <div class="row">
@@ -51,6 +51,9 @@
 	CKEDITOR.replace('content',{
 		width : '100%',
 		height : '350'
+	})
+	$('.btn-primary').click(function(){
+		history.back(-2)
 	})
 </script>
 <c:import url="/common/foot"/>

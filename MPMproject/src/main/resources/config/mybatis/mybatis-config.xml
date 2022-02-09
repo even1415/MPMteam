@@ -5,10 +5,13 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <configuration>
    <!-- 타입 별칭 설정============================  -->
    <typeAliases>
+   		<typeAlias type="com.mympm.domain.CommunityVO" alias="Community"/>
+   		<typeAlias type="com.mympm.domain.NoticeVO" alias="Notice"/>
    </typeAliases>
    
    <!-- 매퍼 정의================================ -->
    <mappers>
-   
+   		<mapper resource="config/mybatis/mapper/CommunityMapper.xml"/>
+   		<mapper resource="config/mybatis/mapper/NoticeMapper.xml"/>
    </mappers>
 </configuration>
