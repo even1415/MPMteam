@@ -1,6 +1,8 @@
 @charset "utf-8";
 @import url("noticeview.css");
 @import url("noticelist.css");
+@import url("MPMteam_Login.css");
+@import url("MPMteam_Signup.css");
 /* border: 2px solid red; */
 
 :root {

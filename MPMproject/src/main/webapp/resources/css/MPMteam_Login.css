@@ -1,0 +1,55 @@
+@charset "utf-8";
+@import "main.css";
+
+.section {
+    min-height: 73vh;
+}
+
+#loginform {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 700px;
+    height: 500px;
+}
+
+td, th {
+    border: 2px solid var(--nav);
+}
+
+#logintext {
+    height: 150px;
+    text-align: center;
+    font-size: 30px;
+}
+
+#formtext {
+    width: 40%;
+    text-align: right;
+    font-size: 20px;
+    padding: 30px;
+}
+
+#saveid {
+    margin-left: 10px;
+}
+
+#submit {
+    height: 100px;
+    text-align: center;
+}
+
+#loginbtn, #signupbtn {
+    width: 125px;
+    height: 50px;
+    margin-left: 40px;
+    margin-right: 40px;
+    background-color: var(--btn);
+    color: var(--font);
+}
+
+#inputid, #inputpwd {
+    width: 350px;
+    height: 50px;
+}

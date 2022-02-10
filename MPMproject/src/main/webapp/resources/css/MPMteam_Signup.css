@@ -1,0 +1,68 @@
+@charset "utf-8";
+@import "main.css";
+
+.section {
+    min-height: 750px;
+}
+
+#signupform {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 770px;
+    height: 500px;
+}
+
+td, th {
+    border: 2px solid var(--nav);
+}
+
+#signuptext {
+    height: 150px;
+    text-align: center;
+    font-size: 30px;
+}
+
+#formtext {
+    width: 35%;
+    text-align: right;
+    font-size: 18px;
+    padding: 30px;
+}
+.col-md-8 {
+	text-align: left;
+	margin-left: 20px;
+}
+
+#idcheckbtn {
+    width: 100px;
+    height: 50px;
+    margin-left: 10px;
+    background-color: var(--btn);
+    color: var(--font);
+}
+
+#issamepwd {
+    color: red;
+    margin-left: 10px;
+}
+
+#submit {
+    height: 100px;
+    text-align: center;
+}
+
+#signupbtn, #resetbtn {
+    width: 125px;
+    height: 50px;
+    margin-left: 40px;
+    margin-right: 40px;
+    background-color: var(--btn);
+    color: var(--font);
+}
+
+#inputid, #inputpwd, #inputpwdrepeat, #inputnickname, #inputemail {
+    width: 350px;
+    height: 50px;
+}

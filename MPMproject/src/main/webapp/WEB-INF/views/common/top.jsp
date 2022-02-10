@@ -17,8 +17,11 @@
 $(function(){
 	  $('#notice').click(function(){
 		 	location.href = 'board/boardList'
-	  })
+	  });
 	  
+	  $('#login').click(function(){
+		 	location.href = 'login/login'
+	  });
 })
 </script>
 <body>
@@ -43,6 +46,6 @@ $(function(){
                 <span><a href="#">조연후</a>&nbsp;<span>님 환영합니다.</span>
             </div>
             <div class="login">
-                <button class="login-btn">로그인</button>
+                <button class="login-btn" id="login">로그인</button>
             </div>
        </header>
