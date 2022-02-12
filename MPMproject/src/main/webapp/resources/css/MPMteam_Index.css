@@ -1,0 +1,65 @@
+@import "base.css";
+@charset "utf-8";
+
+.index-section{
+    max-width: 1600px;
+    min-width: 800px;
+    margin: auto 11.333%;
+    padding-top: 50px;
+    
+}
+.col-md-6{
+	display: flex !important;
+	margin-left:0;
+		text-align: center;
+	
+}
+.rect1{
+	height: 250px;
+	width:350px;
+	background-image: url(../img/sleep.PNG);
+	border-radius: 5%;
+	background-size: cover;
+	margin: auto;
+
+}
+.rect2{
+	background-image: url(../img/share.gif);
+	height: 250px;
+	border-radius: 1.5%;
+	width:350px;
+	background-size: cover;
+	margin: auto;
+	
+}
+user agent stylesheet
+main {
+    display: block;
+}
+
+.stretched-link::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    content: "";
+}
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex !important;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+}
+.row>* {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+    margin-top: var(--bs-gutter-y);
+}
