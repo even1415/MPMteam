@@ -1,0 +1,56 @@
+@charset "utf-8";
+
+.container{
+    text-align: center;
+    margin: auto 175px;
+    height: 550px;
+}
+.cth1{
+    margin-top: 20px;
+}
+.ctoption{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.cttable1{
+    width: 100%;
+    margin-bottom: 15px;
+}
+#ctlist{
+    width: 300px;
+    display: inline-flex;
+    justify-content:space-around;
+    margin-left:400px;
+    list-style: none;
+}
+.ctfind{
+    width: 80px;
+    height: 27px;
+    margin-left: 50px;
+}
+#ctsearch{
+    height: 27px;
+    width: 260px;
+}
+#inquiry{
+    height: 27px;
+    width: 50px;
+    background-color: rgb(189, 224, 255);
+    color: black;
+    
+}
+#completion{
+    height: 27px;
+    width: 70px;
+    float: right;
+    background-color: rgb(189, 224, 255);
+    color: black;
+    margin-bottom : 1.2rem;
+}
+#tennext{
+    margin-left: 250px;
+    width: 130px;
+    height: 26px;
+    background-color: rgb(189, 224, 255);
+    color: black;
+}
