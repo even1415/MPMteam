@@ -1,51 +1,65 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="utf-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" type=text/css href="${pageContext.request.contextPath}/resources/css/main.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-	<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>MPM</title>
+<base href="/">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<link rel="icon" href="/favicon.ico">
+<meta name="viewport"
+	content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+
+<link href="${pageContext.request.contextPath}/resources/css/base.css"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 </head>
-<script>
-$(function(){
-	  $('#notice').click(function(){
-		 	location.href = 'board/boardList'
-	  });
-	  
-	  $('#login').click(function(){
-		 	location.href = 'login/login'
-	  });
-})
-</script>
 <body>
-    <div class="wrap">
-        <!--header----------------------------------------------------->
-        <header class="header">
-            <div class="logo">
-                <a href="${pageContext.request.contextPath}"><img src="${pageContext.request.contextPath}/resources/img/logo.png"></a>
-            </div>
-            <nav class="nav">
-                <div class="notice">
-                    <a href="#" id="notice">공지사항</a>
-                </div>
-                <div class="music">
-                    <a href="#">음원차트</a>
-                </div>
-                <div class="community">
-                    <a href="#">커뮤니티</a>
-                </div>
-            </nav>
-            <div class="logintag">
-                <span><a href="#">조연후</a>&nbsp;<span>님 환영합니다.</span>
-            </div>
-            <div class="login">
-                <button class="login-btn" id="login">로그인</button>
-            </div>
-       </header>
+	<header id="header" role="banner">
+		<div class="header_inner">
+			<h1 class="flo_bi">
+				<a href="#"><span class="ir">MPM</span></a>
+			</h1>
+			<nav role="navigation" class="nav_gnb">
+				<ul>
+					<li menu="[object Object]"><a href="#" class="">
+							공지사항 </a></li>
+					<li menu="[object Object]"><a href="#" class="">
+							커뮤니티</a></li>
+					<li menu="[object Object]"><a href="#" class="">
+							음원차트</a></li>
+				</ul>
+			</nav>
+			<fieldset class="flo_search">
+			
+				<legend>FLO 검색</legend>
+
+				<input id="searchKeywordInput" type="text" placeholder="검색어를 입력하세요."
+					autocomplete="new-password" spellcheck="false" autocorrect="off"
+					autocapitalize="off" class="iptxt">
+				<!---->
+				<div class="layer_style search_suggestion_w" style="display: none;">
+					<h3 class="hidden">검색제안</h3>
+					<!---->
+				</div>
+			</fieldset>
+			<div role="navigation" class="snb_w">
+				<ul>
+					<li><a href="/member/signin" class="">로그인</a></li>
+					<li><a href="/member/signup" class="">회원가입</a></li>
+				</ul>
+			</div>
+		</div>
+	</header>
+
+</body>

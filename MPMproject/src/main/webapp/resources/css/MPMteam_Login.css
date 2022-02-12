@@ -1,5 +1,5 @@
 @charset "utf-8";
-@import "main.css";
+@import "base.css";
 
 .section {
     min-height: 73vh;

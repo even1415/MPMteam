@@ -2,6 +2,7 @@
     pageEncoding="EUC-KR"%>
    <!--main----------------------------------------------------->
         <div class="section">
+        <br><br><br><br><br><br><br><br>
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -49,7 +50,7 @@
                         </div>
                         <!-- Ä³·Î¼¿ ³¡------------------------------ -->
                     </div>
-                    <h1><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></h1>
+                  
                 </div>
             </div>
         </div>

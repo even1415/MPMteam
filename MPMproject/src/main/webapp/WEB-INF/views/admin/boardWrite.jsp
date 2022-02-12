@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!-- <script src="//cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script> -->
+<link rel="stylesheet" type=text/css href="${pageContext.request.contextPath}/resources/css/MPMteam_Boardwrite.css">
 <c:import url="/common/top"/>
 <div class="container-fluid">
 <div class="row">

@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <meta charset="utf-8">
 <!-- playbar -->
         <div class="playbar">
             <div class="music-left" >
@@ -29,9 +30,9 @@
                 </div>
 
                 <div class="time">
-                    <span>ÇöÀç½Ã°£</span>
+                    <span>í˜„ìž¬ì‹œê°„</span>
                     <span>&nbsp;/&nbsp;</span>
-                    <span>ÀüÃ¼½Ã°£</span>
+                    <span>ì „ì²´ì‹œê°„</span>
                 </div>
 
             </div>
@@ -55,16 +56,61 @@
       
 
         <!--footer----------------------------------------------------->
-        <footer>
-            <a href="#">ÀÌ¿ë¾à°ü</a>&nbsp;<a href="#">À§Ä¡±â¹Ý¼­ºñ½º ÀÌ¿ë¾à°ü</a>&nbsp;<a href="#">°³ÀÎÁ¤º¸Ã³¸®¹æÄ§</a>&nbsp;
-            <a href="#">Ã»¼Ò³âº¸È£Á¤Ã¥</a>&nbsp;<a href="#">Á¦ÈÞ/ÇÁ·Î¸ð¼Ç¹®ÀÇ</a>&nbsp;<a href="#">ÀÌ¸ÞÀÏÁÖ¼Ò¹«´Ü¼öÁý°ÅºÎ</a><br><br>
-            ¢ß MPM Entertainment 
-            ¼­¿ïÆ¯º°½Ã ¸¶Æ÷±¸ ¾çÈ­·Î 127 Ã·´Üºôµù 7Ãþ MPM »ç¹«½Ç <br>
-            ´ëÇ¥ÀÚ : Á¶ ¿¬ ÈÄ
-            °í°´¼¾ÅÍ : 010-5272-7896 (ÆòÀÏ 09:00-18:00)
-            Email : mpm@naver.com
-        </footer>
-       
-    </div>
+      <section id="main" role="main" class="section_home w955">
+<footer id="footer" role="contentinfo" class="">
+	<div class="footer_inner">
+		<div class="flo_fnb">
+			<ul>
+				<li><a href="/intro" class="">MPM ì†Œê°œ</a></li>
+				<li><a href="/help/notice/1" class="">ê³ ê°ì„¼í„°</a></li>
+				<li><a href="/help/faq/0/1" class="">ê³µì§€ì‚¬í•­</a></li>
+				<li><a href="/download/pc/app" class="">MPM palyer</a></li>
+			</ul>
+		</div>
+		<div class="social_area">
+			<ul>
+				<li><a href="#"
+					target="_blank" class="btn-facebook"><span class="hidden">facebook
+							</span></a></li>
+				<li><a
+					href="#"
+					target="_blank" class="btn-instagram"><span class="hidden">instagram
+							</span></a></li>
+				<li><a
+					href="#"
+					target="_blank" class="btn-youtube"><span class="hidden">youtube
+							</span></a></li>
+				<li><a href="#" target="_blank"
+					class="btn-twitter"><span class="hidden">twitter</span></a></li>
+			</ul>
+		</div>
+		<div class="policy_area" style="margin-left:-37px">
+			<ul>
+				<li><a href="http://www.dreamuscompany.com/" target="_blank">&nbsp;íšŒì‚¬ì†Œê°œ</a></li>
+				<li><a href="#">&nbsp;ì´ìš©ì•½ê´€</a></li>
+				<li><a href="#"><em>&nbsp;ê°œì¸ì •ë³´ ì²˜ë¦¬ë°©ì¹¨</em></a></li>
+				<li><a href="#">&nbsp;ì²­ì†Œë…„ ë³´í˜¸ì •ì±…</a></li>
+			</ul>
+		</div>
+		<address>
+			<div class="inner">
+				<div class="address_top">
+					<span>ëŒ€í‘œì´ì‚¬: ì¡°ì—°í›„</span><span>ì´ë©”ì¼ : dusgn23574@naver.com</span><span>ì‚¬ì—…ìž ë“±ë¡ ë²ˆí˜¸&nbsp;: xxxx-xxxx-xxxx</span>
+				</div>
+				<div class="address_bottom">
+					<em class="blind">ï¿½Ö¼ï¿½ ï¿½ï¿½ ï¿½ï¿½Ç¥ï¿½ï¿½È£</em><span>ì˜¤ì‹œëŠ” ê¸¸: ì„œìš¸ì‹œ ë§ˆí¬êµ¬ ì–‘í™”ë¡œ 127
+						</span><span>ëŒ€í‘œì „í™”: 1212-9898</span><br>
+					<span>íŒ©ìŠ¤ : 02-xxx-xxxx </span><span>ëŒ€í‘œì „í™”: 1212-4545</span>
+				</div>
+			</div>
+		</address>
+		<p class="copyright">
+			<span>Copyright</span>ALL RIGHTS RESERVED
+		</p>
+		<p class="browser_support"> MPM All rights reserved.
+		</p>
+	</div>
+</footer>
+</section>
 </body>
 </html>
