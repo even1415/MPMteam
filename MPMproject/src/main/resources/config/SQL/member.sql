@@ -42,3 +42,16 @@ ALTER TABLE MPM_MEMBER
 		PRIMARY KEY (
 			IDX
 		);
+
+drop sequence MPM_MEMBER_SEQ;  --확인 차 삽입코드
+
+create sequence MPM_MEMBER_SEQ
+increment by 1
+start with 100000
+nocache;
+        
+INSERT INTO MPM_MEMBER (IDX, NICKNAME, USERID, EMAIL, PWD)
+VALUES (MPM_MEMBER_SEQ.NEXTVAL, '관리자', 'admin', 'mpmteam@mpm.com', '1111');
+
+INSERT INTO MPM_MEMBER (IDX, NICKNAME, USERID, EMAIL, PWD)
+VALUES (MPM_MEMBER_SEQ.NEXTVAL, '테스트유저', 'test', 'test@mpm.com', '1111');
