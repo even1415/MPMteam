@@ -2,59 +2,40 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<!-- <script src="//cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script> -->
-<link rel="stylesheet" type=text/css href="${pageContext.request.contextPath}/resources/css/MPMteam_Boardwrite.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/base.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/MPMteam_boardWrite.css">
+<script src="${pageContext.request.contextPath}/resources/js/ckeditor/ckeditor.js"></script>
 <c:import url="/common/top"/>
-<div class="container-fluid">
-<div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
-        <h2 class="text-center">게시글 쓰기</h2>
-        <form action="BoardWriterProc.jsp" method="post">
-          <table class="table table-striped">
-            <tr>
-                <td>작성자</td>
-                <td><input type="text"  class="form-control" name="writer"></td>
-            </tr>
-            <tr>
-                <td>제목</td>
-                <td><input type="text"  class="form-control" name="subject"></td>
-            </tr>
-            <tr>
-                <td>이메일</td>
-                <td><input type="email"  class="form-control" name="email"></td>
-            </tr>
-             
-            <tr>
-                <td>비밀번호</td>
-                <td><input type="password"  class="form-control" name="password"></td>
-            </tr>
-             
-            <tr>
-                <td>글내용</td>
-                <td><textarea rows="10" cols="50" name="content" class="form-control"></textarea></td>
-            </tr>
-            <tr>
-                 
-                <td colspan="2"  class="text-center">
-                    <input type="submit" value="글쓰기" class="btn btn-success">
-                    <input type="reset" value="다시작성" class="btn btn-warning">
-                    <button type="button"  class="btn btn-primary">전체 게시글보기</button>
-                </td>
-            </tr>
-             
-          </table>
-        </form>
+<div class="container" style="margin-top:120px">
+	<section style="height:80%;padding-top:40px;background-color:#fff;height:100%;" role="main">
+<form>
+<div class="text_inp_wrap" style="height:100%;">
+	<div class="subject">
+		<textarea name="ntitle" class="sbj" rows="1" maxlength="100" placeholder="제목을 입력해 주세요" autofocus></textarea>
+	</div>
+	
+	<textarea name="content" class="editor_wrap" rows="10" cols="80" style="padding-top:20px;"></textarea> 
+    <div style="padding-top : 15px; text-align:right">
+		 <button type="button" class="btn btn-success">글쓰기</button>   
+		 <button type="reset" class="btn btn-danger">다시쓰기</button>   
     </div>
 </div>
+</form>
+</section>
 </div>
+
 <script>
+	CKEDITOR.config.resize_enabled = false
 	CKEDITOR.replace('content',{
+		language : 'ko',
+		uiColor : '#CCEAEE',
 		width : '100%',
-		height : '350'
-	})
+		height : '400',
+		allowedContent:true, 
+	    filebrowserUploadUrl : '${pageContext.request.contextPath}/admin/boardWriteEnd'
+	}) 
 	$('.btn-primary').click(function(){
 		history.back(-2)
-	})
+	}) 
 </script>
 <c:import url="/common/foot"/>

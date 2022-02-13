@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+.text_inp_wrap .subject .sbj{
+	width: 100%;
+    overflow: hidden; 
+    min-height: 32px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: #000;
+    font-size: 28px;
+    word-break: break-word;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    cursor: text;
+    resize: none;
+    outline: none;
+}
+.text_inp_wrap .subject{
+	margin-bottom: 30px;
+    border-bottom: 1px solid cadetblue;
+}
+textarea{
+    text-decoration: none;
+}
+.editor_wrap{
+	margin-top : 29px;
+	border : 1px solid #ddd;
+}
