@@ -2,17 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<!-- Latest compiled JavaScript -->
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<link
-	href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
-	rel="stylesheet" type="text/css">
 <link rel="stylesheet" type=text/css href="${pageContext.request.contextPath}/resources/css/MPMteam_Index.css">
+
 <c:import url="/common/top" />
 <c:import url="/common/carousel" />
 
@@ -59,6 +50,11 @@
 		</div>
 	</div>
 
+</section>
+<section class="index-section2" >
+	
+
+	
 </section>
 
 <c:import url="/common/foot" />
