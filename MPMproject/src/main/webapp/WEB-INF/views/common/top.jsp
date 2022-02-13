@@ -13,20 +13,31 @@
 <link rel="icon" href="/favicon.ico">
 <meta name="viewport"
 	content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<link rel="stylesheet"
+   href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script
+   src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script
+   src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link
+   href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
+   rel="stylesheet" type="text/css">
 </head>
 <body>
 	<header id="header" role="banner">
 		<div class="header_inner">
 			<h1 class="flo_bi">
-				<a href="#"><span class="ir">MPM</span></a>
+				<a href="${pageContext.request.contextPath}/"><span class="ir">MPM</span></a>
 			</h1>
 			<nav role="navigation" class="nav_gnb">
 				<ul>
-					<li menu="[object Object]"><a href="#" class="">
+					<li menu="[object Object]"><a href="${pageContext.request.contextPath}/board/noticeList" class="">
 							공지사항 </a></li>
-					<li menu="[object Object]"><a href="#" class="">
+					<li menu="[object Object]"><a href="${pageContext.request.contextPath}/board/communityList" class="">
 							커뮤니티</a></li>
-					<li menu="[object Object]"><a href="#" class="">
+					<li menu="[object Object]"><a href="" class="">
 							음원차트</a></li>
 				</ul>
 			</nav>
@@ -45,8 +56,8 @@
 			</fieldset>
 			<div role="navigation" class="snb_w">
 				<ul>
-					<li><a href="/member/signin" class="">로그인</a></li>
-					<li><a href="/member/signup" class="">회원가입</a></li>
+					<li><a href="/member/signin" class="">~~~</a>님 환영합니다.</li>
+					<li><a href="${pageContext.request.contextPath}/login/login" class="">로그인</a></li>
 				</ul>
 			</div>
 		</div>
