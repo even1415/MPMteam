@@ -13,6 +13,7 @@ table{
 	border: thin solid #E6E6E6;
 }
 textarea:disabled{
+	resize: none;
 	background: white;
 	color: black;
 }
