@@ -1,64 +1,89 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<link rel="stylesheet" type=text/css href="${pageContext.request.contextPath}/resources/css/MPMteam_Noticelist.css">
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/MPMteam_Noticelist.css"> 
 <c:import url="/common/top"/>
-	 <div class="container">
-            <form name="notice_form"action="boardWrite">
-                <div class="ntheader">
-                    <h1 class="nth1">공지사항</h1>
-                    <div class="ntoption">
-                        <select class="ntfind" name="findtype">
-                            <option value="0"> 전체 </option>
-                            <option value="1">제 목</option>
-                            <option value="2">작 성 자</option>
-                            <option value="3">글 내 용</option>
-                        </select>
-                        <input type="text" id="ntsearch">
-                        <button id="inquiry">조회</button>
-                    </div>
-                </div>
-            </form>
-            <button id="completion">글쓰기</button>
-            <table border="1" bordercolor="blue" class="nttable1">
-                <th style="width:150px;background-color: #3D56B2;color: white;">글번호</th>
-                <th style="width:550px;background-color: #3D56B2;color: white;">제목</th>
-                <th style="background-color: #3D56B2;color: white;">작성자</th>
-                <th style="background-color: #3D56B2;color: white;">조회수</th>
-                <th style="background-color: #3D56B2;color: white;">등록일</th>
-                <tr>
-                    <td>1</td>
-                    <td>제목이쥬</td>
-                    <td>작성자쥬</td>
-                    <td>조회수쥬</td>
-                    <td>등록일이쥬</td>
-                </tr>
-            </table>
-            <ul id="ntlist">
-                <li><button id="ntpage" style="width: 30px;
-                    background-color: #3D56B2;color: white;"><</button></li>
-                <li><button id="ntpage" style="width: 30px;
-                    background-color: #3D56B2;color: white;">1</button></li>
-                <li><button id="ntpage" style="width: 30px;
-                    background-color: #3D56B2;color: white;">2</button></li>
-                <li><button id="ntpage" style="width: 30px;
-                    background-color: #3D56B2;color: white;">3</button></li>
-                <li><button id="ntpage" style="width: 30px;
-                    background-color: #3D56B2;color: white;">4</button></li>
-                <li><button id="ntpage" style="width: 30px;
-                    background-color: #3D56B2;color: white;">5</button></li>
-                <li><button id="ntpage" style="width: 30px;
-                    background-color: #3D56B2;color: white;">></button></li>
-            </ul>
-            <button id="tennext" type="submit">10개씩 보기</button>
-        </div>
 <script>
-	$(function(){
-		$('#completion').on('click',function(e){
-			location.href = '../admin/boardWrite'
-		    
+$(function(){
+		$('.newlist_tab ul li').click(function(){
+				$('.newlist_tab ul li').removeClass('on')	
+				$(this).addClass('on')
+			})
+		$('.newlist_tab ul li').not(':first-child').click(function(){
+			location.href = '${pageContext.request.contextPath}/admin/boardWrite'
 		})
-	})   
+		
+	}) //--------------------------------------
 </script>
+ <div class="container" style="margin-top:100px;height:100%"> 
+	<section id="main" role="main" class="section_help" style="padding-top:80px;height:100%">
+		<div>
+			<div class="section_inner" style="margin-top:-80px;">
+				<h2>MPM</h2>
+				<div class="newlist_tab">
+					<ul>
+						<li class="on"><button type="button" class=" btn_tab_normal ">공지사항</button></li>
+						<li class=""><button  class=" btn_tab_normal">글쓰기</button></li>
+					</ul>
+				</div>
+			</div>
+			<div>
+				<div class="help_list">
+					<table id="help_list_table" class="help_list_table">
+						<caption>고객지원 리스트</caption>
+						<colgroup>
+							<col width="42">
+							<col width="*">
+							<col width="100">
+							<col width="90">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">번호</th>
+								<th scope="col" class="info">제목</th>
+								<th scope="col">작성일</th>
+								<th scope="col"></th>
+							</tr>
+						</thead>
+						<tbody id="421">
+							<tr class="">
+								<td>421</td>
+								<td class="info_help"><span>[서비스점검] 2월 각 은행/증권사 시스템
+										작업으로 인한 네이버페이 결제 서비스 일시 중단 안내</span></td>
+								<td>2022.02.09</td>
+								<td><button type="button" class="btn_help_open">내용열기</button></td>
+							</tr>
+							<!---->
+						</tbody>
+					</table>
+					<div class="paging_w">
+						<button type="button">
+							<i class="btn_arrow_l press"></i>
+						</button>
+						<button class="btn_num">
+							<a class="active">1</a>
+						</button>
+						<button class="btn_num">
+							<a class="">2</a>
+						</button>
+						<button class="btn_num">
+							<a class="">3</a>
+						</button>
+						<button class="btn_num">
+							<a class="">4</a>
+						</button>
+						<button class="btn_num">
+							<a class="">5</a>
+						</button>
+						<button type="button">
+							<i class="btn_arrow_r"></i>
+						</button>
+					</div>
+					<!---->
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
 <c:import url="/common/foot"/>
