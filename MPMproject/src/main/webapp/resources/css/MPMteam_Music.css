@@ -1,0 +1,42 @@
+@charset "utf-8";
+@import "base.css";
+.container{
+	text-align: center;
+	margin: auto 11.333%;
+	min-height: 600px;
+}
+tr th{
+	text-align: center;
+	background-color: var(--bg);
+}
+.btn{
+	background-color: var(--btn);
+    color: var(--font);
+}
+table{
+	margin-top: 130px;
+}
+label{
+	color: white;
+}
+#mlyrics{
+	resize: none;
+	background-color: white;
+}
+#mtitle{
+	width: 80%;
+}
+#mcoment{
+	resize: none;
+	background-color: white;
+}
+#martist{
+	width: 35%;
+}
+#sname{
+	width: 35%;
+}
+input[type="text"]:disabled {
+	background-color: white;
+	color: black;
+}

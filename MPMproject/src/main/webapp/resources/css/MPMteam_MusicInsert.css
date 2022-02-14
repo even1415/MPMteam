@@ -1,0 +1,38 @@
+@charset "utf-8";
+@import "base.css";
+.container{
+	text-align: center;
+	margin: auto 11.333%;
+	min-height: 600px;
+}
+table{
+	margin-top: 130px;
+}
+tr th{
+	text-align: center;
+	background-color: var(--nav);
+	color: var(--font);
+}
+tr td{
+	text-align: center;
+}
+.btn{
+	background-color: var(--btn);
+    color: var(--font);
+	float: right;
+}
+table{
+	border: thin solid #E6E6E6;
+}
+#mlyrics{
+	resize: none;
+}
+#mtitle{
+	width: 80%;
+}
+#mcoment{
+	resize: none;
+}
+#martist{
+	width: 35%;
+}
