@@ -26,7 +26,7 @@ $(function(){
                     <tr>
                         <td id="formtext">아이디(ID)</td>
                         <td class="col-md-8">
-                            <input type="text" name="userid" id="userid" class="userid" placeholder="아이디 입력" required>
+                            <input type="text" name="userid" id="userid" class="userid" value="${cookie.uid.value}" placeholder="아이디 입력" required>
                         </td>
                     </tr>
                     <tr>
