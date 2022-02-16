@@ -8,13 +8,17 @@
 <script>
 $(function(){
 	  $('#signupbtn').click(function(){
-		 	location.href = '${pageContext.request.contextPath}/login/signup'
+		 	location.href = '${pageContext.request.contextPath}/signup'
 	  });
+	  /* $('#loginbtn').click(function(){
+		 	location.href = '${pageContext.request.contextPath}/loginEnd'
+	  }); */
 })
 </script>
 
 <div class="section">
        <div class="container">
+       <form name="loginF" action="${pageContext.request.contextPath}/loginEnd" method="post">
               <table id="loginform">
                     <tr>
                         <td colspan="2" id="logintext">Login</td>
@@ -22,18 +26,18 @@ $(function(){
                     <tr>
                         <td id="formtext">아이디(ID)</td>
                         <td class="col-md-8">
-                            <input type="text" id="inputid" class="inputid" placeholder="아이디 입력">
+                            <input type="text" name="userid" id="userid" class="userid" placeholder="아이디 입력" required>
                         </td>
                     </tr>
                     <tr>
                         <td id="formtext">비밀번호(Password)</td>
                         <td class="col-md-8">
-                            <input type="password" id="inputpwd" class="inputpwd" placeholder="비밀번호 입력">
+                            <input type="password" name="pwd" id="pwd" class="pwd" placeholder="비밀번호 입력" required>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <input type="checkbox" id="saveid" name="xxx" value="0">
+                            <input type="checkbox" name="saveId" id="saveId">
                             <span>아이디 저장</span>
                         </td>
                     </tr>
@@ -44,6 +48,7 @@ $(function(){
                         </td>
                     </tr>
              </table>
+       </form>      
        </div>
 </div>
 

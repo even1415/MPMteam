@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,8 +57,14 @@
 			</fieldset>
 			<div role="navigation" class="snb_w">
 				<ul>
-					<li><a href="/member/signin" class="">~~~</a>님 환영합니다.</li>
-					<li><a href="${pageContext.request.contextPath}/login/login" class="">로그인</a></li>
+					<c:if test="${loginUser!=null}">
+					<li><a href="#" class="">${loginUser.userid}</a>님 환영합니다.</li>
+					<li><a href="${pageContext.request.contextPath}/login" class="">로그아웃</a></li>
+					</c:if>
+					<c:if test="${loginUser==null}">
+					<li><a href="#" class=""></a>로그인이 필요합니다.</li>
+					<li><a href="${pageContext.request.contextPath}/login" class="">로그인</a></li>
+					</c:if>
 				</ul>
 			</div>
 		</div>
