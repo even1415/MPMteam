@@ -8,7 +8,7 @@
 <script>
 $(function(){
 	  $('#signupbtn').click(function(){
-		 	location.href = '../login/signup'
+		 	location.href = '${pageContext.request.contextPath}/login/signup'
 	  });
 })
 </script>

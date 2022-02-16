@@ -1,0 +1,19 @@
+@charset "utf-8";
+@import "base.css";
+.container{
+	text-align: center;
+	margin: auto 11.333%;
+	min-height: 600px;
+}
+#t1{
+	text-align: center;
+	background-color: var(--bg);
+}
+table{
+	border: thin solid #E6E6E6;
+}
+textarea:disabled{
+	resize: none;
+	background: white;
+	color: black;
+}
