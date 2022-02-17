@@ -2,6 +2,17 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="Mapper">
+<mapper namespace="com.mympm.mapper.CommunityMapper">
+	<!-- 커뮤니티 게시글 추가 -->
+   <insert id="ctwriterinsert" parameterType="Community">
+   		<selectKey keyProperty="ct_idx" resultType="int" order="BEFORE">
+   			select ct_seq.nextval from dual
+   		</selectKey>
+   		insert into community values(#{ct_idx},#{ct_title},
+   		#{ct_writer},#{ct_content:VARCHAR},0,sysdate)
+   </insert>
    
+   <select id="ctreadList" resultType="Community">
+   		select * from community
+   </select>
 </mapper>

@@ -8,15 +8,17 @@
 <c:import url="/common/top"/>
 <div class="container" style="margin-top:120px">
 	<section style="height:80%;padding-top:40px;background-color:#fff;height:100%;" role="main">
-<form>
+
+<form name="bf" action="${pageContext.request.contextPath}/user/CommunityWriteEnd" method="post">
+
 <div class="text_inp_wrap" style="height:100%;">
 	<div class="subject">
-		<textarea name="ntitle" class="sbj" rows="1" maxlength="100" placeholder="제목을 입력해 주세요" autofocus></textarea>
+		<textarea name="ct_title" class="sbj" rows="1" maxlength="100" placeholder="제목을 입력해 주세요" autofocus></textarea>
 	</div>
 	
-	<textarea name="content" class="editor_wrap" rows="10" cols="80" style="padding-top:20px;"></textarea> 
+	<textarea name="ct_content" class="editor_wrap" rows="10" cols="80" style="padding-top:20px;"></textarea> 
     <div style="padding-top : 15px; text-align:right">
-		 <button type="button" class="btn btn-success">글쓰기</button>   
+		 <button type="submit" class="btn btn-success">글쓰기</button>   
 		 <button type="reset" class="btn btn-danger">다시쓰기</button>   
     </div>
 </div>
@@ -26,7 +28,7 @@
 
 <script>
 	CKEDITOR.config.resize_enabled = false
-	CKEDITOR.replace('content',{
+	CKEDITOR.replace('ct_content',{
 		language : 'ko',
 		uiColor : '#CCEAEE',
 		width : '100%',
@@ -37,5 +39,7 @@
 	$('.btn-primary').click(function(){
 		history.back(-2)
 	}) 
+	
+	
 </script>
 <c:import url="/common/foot"/>
