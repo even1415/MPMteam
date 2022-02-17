@@ -1,10 +1,12 @@
 @charset "utf-8";
-
+@import "base.css";
 
 .container{
     text-align: center;
     margin: auto 11.333%;
-    height: 550px;
+    min-height: 200px;
+    border:2px solid red;
+    margin-top:150px
 }
 .cth1{
     margin-top: 20px;

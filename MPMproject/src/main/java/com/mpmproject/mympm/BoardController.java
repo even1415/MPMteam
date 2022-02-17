@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -32,7 +33,7 @@ public class BoardController {
 		
 		return "board/noticeList";
 	}
-	
+	//커뮤니티 글 목록 페이지
 	@GetMapping("/board/communityList")
 	public String communityListPage(Model m) {
 		List<CommunityVO> ctreadList=ctService.ctreadList();
@@ -41,13 +42,21 @@ public class BoardController {
 		
 		return "board/communityList";
 	}
-	
+	//커뮤니티 글 상세 페이지
+	@GetMapping("/board/communityView/{idx}")
+	public String communityViewPage(Model m,@PathVariable int idx) {
+		logger.info("idx={}", idx);
+		CommunityVO ctvo=this.ctService.selectCommunityByIdx(idx);
+		m.addAttribute("ct",ctvo);
+		return "board/communityView";
+	}
+	//커뮤니티 글 쓰기 페이지
 	@GetMapping("/user/communityWrite")
 	public String communityWritePage() {
 		logger.info("");
 		return "user/communityWrite";
 	}
-	
+	//커뮤니티 글 쓰기 작동 페이지
 	@PostMapping("/user/CommunityWriteEnd")
 	public String communityWriteEndPage(@ModelAttribute CommunityVO ctvo) {
 		logger.info("ctvo={}", ctvo);
@@ -57,10 +66,6 @@ public class BoardController {
 		return "board/communityList";
 	}
 	
-	@PostMapping("/board/communityView")
-	public String communityViewPage(@ModelAttribute CommunityVO ctvo) {
-		return "board/communityView";
-	}
 	
 	
 	

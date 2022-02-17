@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/MPMteam_Noticelist.css"> 
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/MPMteam_Communitylist.css"> 
 <c:import url="/common/top"/>
 <script>
 $(function(){
@@ -42,17 +42,19 @@ $(function(){
 							<tr>
 								<th scope="col">번호</th>
 								<th scope="col" class="info">제목</th>
+								<th scope="col" style="width:150ppx">작성자</th>
 								<th scope="col">작성일</th>
-								<th scope="col"></th>
+								<th scope="col" style="width:70px">조회수</th>
 							</tr>
 						</thead>
 						<c:forEach var="ct" items="${ctreadList}">
 						<tbody id="421">
 							<tr class="">
 								<td>${ct.ct_idx}</td>
-								<td class="info_help"><span>${ct.ct_title}</span></td>
+								<td class="info_help"><a href="communityView/${ct.ct_idx}">${ct.ct_title}</a></td>
+								<td>${ct.ct_writer}</td>
 								<td>${ct.ct_date}</td>
-								<td><button type="button" class="btn_help_open">내용열기</button></td>
+								<td>${ct.ct_readnum}</td>
 							</tr>
 							<!---->
 						</tbody>

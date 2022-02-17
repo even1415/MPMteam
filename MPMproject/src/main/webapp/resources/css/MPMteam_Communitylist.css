@@ -1,56 +1,178 @@
 @charset "utf-8";
-
-.container{
+@import "base.css";
+ .section_help{
+ 	height: 50%;
+    padding: 95px 80px 40px;
+    background-color: #fff;
+ }
+ .section_inner{
+ 	max-width: 1024px;
+    min-width: 800px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+.section_help h2{
+	font-size: 30px;
     text-align: center;
-    margin: auto 175px;
-    height: 550px;
 }
-.cth1{
-    margin-top: 20px;
+.section_help .newlist_tab{
+	padding-right: 0;
+    text-align: center;
+    margin-top: 25px;
+    overflow: hidden;
+    position: relative;
+    /* padding-right: 40px; */
+    height: 32px;
 }
-.ctoption{
-    margin-top: 20px;
-    margin-bottom: 10px;
+.newlist_tab ul{
+	display: inline-block;
+    margin-top: -10px!important;
+    font-size: 0;
+    vertical-align: top;
 }
-.cttable1{
-    width: 100%;
-    margin-bottom: 15px;
+.newlist_tab li{
+	display: inline-block;
+    padding-top: 10px;
+    padding-right: 8px;
 }
-#ctlist{
-    width: 300px;
-    display: inline-flex;
-    justify-content:space-around;
-    margin-left:400px;
-    list-style: none;
+.on .btn_tab_normal{
+	color: #fff;
+    background-color: #3f3fff;
+    border-color: #3f3fff;
 }
-.ctfind{
-    width: 80px;
-    height: 27px;
-    margin-left: 50px;
+.btn_tab_normal{
+	height: 32px;
+    padding: 0 15px;
+   /*  font-size: 14px; */
+    line-height: 32px;
+   /*  border: 1px solid rgba(0,0,0,.2); */
+   text-align : center;
+	border-radius: 16px;
+    vertical-align: top;
+    font-size: 16px;
+    border: 0;
 }
-#ctsearch{
-    height: 27px;
-    width: 260px;
+
+.section_help .help_list{
+	margin-top: 40px;
 }
-#inquiry{
-    height: 27px;
-    width: 50px;
-    background-color: rgb(189, 224, 255);
-    color: black;
-    
+.help_list_table{
+	min-width: 100%;
+    max-width: none;
+    width: auto;
+    border-collapse: collapse;
+    table-layout: fixed;
 }
-#completion{
-    height: 27px;
-    width: 70px;
-    float: right;
-    background-color: rgb(189, 224, 255);
-    color: black;
-    margin-bottom : 1.2rem;
+caption, legend{
+	position: absolute;
+    top: -99999px;
+    left: -99999px;
 }
-#tennext{
-    margin-left: 250px;
-    width: 130px;
-    height: 26px;
-    background-color: rgb(189, 224, 255);
-    color: black;
+.help_list_table thead th{
+	white-space: nowrap;
+	text-align: center;
+}
+.help_list_table th{
+	height: 39px;
+    font-size: 13px;
+    color: #a0a0a0;
+    font-weight: 400;
+    border-top: 1px solid #ebebeb;
+    border-bottom: 1px solid #ebebeb;
+}
+.help_list_table th.info{
+	    padding-left: 20px;
+	    text-align: center;
+}
+.help_list_table tr td{
+	font-size: 15px;
+}
+.help_list_table td{
+	position: relative;
+    height: 84px;
+    text-align: center;
+    border-bottom: 1px solid #f6f6f6;
+}
+.help_list_table tr td.info_help{
+	max-width: 196px;
+    padding-left: 35px;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.help_list_table tr td.info_help a{
+	color:black;
+}
+
+.help_list_table td button[class^=btn_]{
+	border : none;
+	color: transparent;
+    text-indent: 100%;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.help_list_table tr .btn_help_open{
+	background-image: url(../img/arrow2.png);
+	background-repeat : no-repeat;
+   /*  background-position: -597px -455px; */
+    width: 30px;
+    height: 30px;
+}
+.section_help .paging_w{
+	padding-top: 28px;
+    text-align: center;
+}
+.section_help .paging_w button{
+	border : 0;
+	width: 32px;
+    height: 32px;
+    line-height: 32px;
+    vertical-align: middle;
+    padding: 0;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+.section_help .paging_w button i.btn_arrow_l.press{
+	/* background-image: url(../img/sp_button.8292213d.png); */
+    background-position: -236px -691px;
+    width: 13px;
+    height: 13px;
+    color: transparent;
+    text-indent: 100%;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.section_help .paging_w a.active{
+	color: #fff;
+    background-color: #3f3fff;
+}
+.section_help .paging_w a{
+	display: inline-block;
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+    line-height: 34px;
+    text-align: center;
+    border-radius: 16px;
+    vertical-align: top;
+    border: 0;
+}
+.section_help .paging_w button i.btn_arrow_r{
+	/* background-image: url(../img/sp_button.8292213d.png); */
+    background-position: -272px -691px;
+    width: 13px;
+    height: 13px;
+    color: transparent;
+    text-indent: 100%;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.section_help .paging_w button i{
+	display: block;
+    margin: auto;
 }
