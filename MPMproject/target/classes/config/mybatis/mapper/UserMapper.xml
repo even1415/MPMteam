@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper 
+   namespace="com.mympm.mapper.UserMapper">
+   <select id="findMemberByUserid" parameterType="string" resultType="User">
+   		select * from mpm_member where userid=#{value}
+   </select>
+   
+   <select id="findMemberByIdx" parameterType="int" resultType="User">
+   		select * from mpm_member where idx=#{value}
+   </select>
+   
+   <!-- <select id="login" resultType="User"> 로그인
+   		select * from mpm_member where userid=#{userid} and pwd=#{pwd}
+   </select> -->
+   
+   <insert id="signup"> <!-- 회원가입 -->
+   		insert into mpm_member(idx, nickname, userid, email, pwd)
+   		values(MPM_MEMBER_SEQ.nextval, #{nickname}, #{userid}, #{email}, #{pwd})
+   </insert>
+   
+</mapper>

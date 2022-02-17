@@ -62,7 +62,7 @@
     color: var(--font);
 }
 
-#inputid, #inputpwd, #inputpwdrepeat, #inputnickname, #inputemail {
+#userid, #pwd, #pwdrepeat, #nickname, #email {
     width: 350px;
     height: 50px;
 }

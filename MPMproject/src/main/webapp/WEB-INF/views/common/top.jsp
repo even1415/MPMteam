@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>MPM</title>
-<base href="/">
+<!-- <base href="/"> -->
 <meta http-equiv="Cache-Control" content="no-cache">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
@@ -56,8 +57,14 @@
 			</fieldset>
 			<div role="navigation" class="snb_w">
 				<ul>
-					<li><a href="/member/signin" class="">~~~</a>님 환영합니다.</li>
-					<li><a href="${pageContext.request.contextPath}/login/login" class="">로그인</a></li>
+					<c:if test="${loginUser!=null}">
+					<li><a href="#" class="">${loginUser.nickname}</a>님 환영합니다.</li>
+					<li><a href="${pageContext.request.contextPath}/login" class="">로그아웃</a></li>
+					</c:if>
+					<c:if test="${loginUser==null}">
+					<li><a href="#" class=""></a>로그인이 필요합니다.</li>
+					<li><a href="${pageContext.request.contextPath}/login" class="">로그인</a></li>
+					</c:if>
 				</ul>
 			</div>
 		</div>

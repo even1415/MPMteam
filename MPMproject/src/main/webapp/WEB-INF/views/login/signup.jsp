@@ -14,33 +14,33 @@
                         <tr>
                             <td id="formtext">아이디(ID)</td>
                             <td class="col-md-8">
-                                <input type="text" id="inputid" class="inputid" placeholder="아이디 입력">
+                                <input type="text" name="userid" id="userid" class="userid" placeholder="아이디 입력">
                                 <button id="idcheckbtn">중복체크</button>
                             </td>
                         </tr>
                         <tr>
                             <td id="formtext">비밀번호(Password)</td>
                             <td class="col-md-8">
-                                <input type="password" id="inputpwd" class="inputpwd" placeholder="비밀번호 입력">
+                                <input type="password" name="pwd" id="pwd" class="pwd" placeholder="비밀번호 입력">
                             </td>
                         </tr>
                         <tr>
                             <td id="formtext">비밀번호(Password) 확인</td>
                             <td class="col-md-8">
-                                <input type="password" id="inputpwdrepeat" class="inputpwdrepeat" placeholder="비밀번호 재입력">
+                                <input type="password" id="pwdrepeat" class="pwdrepeat" placeholder="비밀번호 재입력">
                                 <span id="issamepwd" class="issamepwd"><b>비밀번호 불일치</b></span>
                             </td>
                         </tr>
                         <tr>
                             <td id="formtext">별명(Nickname)</td>
                             <td class="col-md-8">
-                                <input type="text" id="inputnickname" class="inputnickname" placeholder="닉네임 입력">
+                                <input type="text" name="nickname" id="nickname" class="nickname" placeholder="닉네임 입력">
                             </td>
                         </tr>
                         <tr>
                             <td id="formtext">이메일(E-Mail)</td>
                             <td class="col-md-8">
-                                <input type="text" id="inputemail" class="inputemail" placeholder="이메일 입력">
+                                <input type="text" name="email" id="email" class="email" placeholder="이메일 입력">
                             </td>
                         </tr>
                         <tr>
