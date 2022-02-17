@@ -57,6 +57,7 @@ public class LoginController {
 			ck.setPath("/");
 			res.addCookie(ck);
 		}
+		//logger.info("loginUser={}", loginUser); //테스트코드
 		
 		return "redirect:../mympm";
 	}

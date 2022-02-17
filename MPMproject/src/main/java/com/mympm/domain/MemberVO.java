@@ -3,7 +3,7 @@ package com.mympm.domain;
 public class MemberVO {
 
 	private int idx;
-	private String name;
+	private String nickname;
 	private String userid;
 	private String pwd;
 	private String email;
@@ -20,11 +20,11 @@ public class MemberVO {
 	public void setIdx(int idx) {
 		this.idx = idx;
 	}
-	public String getName() {
-		return name;
+	public String getNickname() {
+		return nickname;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
 	}
 	public String getUserid() {
 		return userid;
@@ -55,7 +55,7 @@ public class MemberVO {
 
 	@Override
 	public String toString() {
-		return "MemberVO [idx=" + idx + ", name=" + name + ", userid=" + userid + ", pwd=" + pwd + ", email=" + email
+		return "MemberVO [idx=" + idx + ", nickname=" + nickname + ", userid=" + userid + ", pwd=" + pwd + ", email=" + email
 				+ ", saveId=" + saveId + "]";
 	}
 	

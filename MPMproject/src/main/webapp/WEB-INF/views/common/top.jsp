@@ -58,7 +58,7 @@
 			<div role="navigation" class="snb_w">
 				<ul>
 					<c:if test="${loginUser!=null}">
-					<li><a href="#" class="">${loginUser.userid}</a>님 환영합니다.</li>
+					<li><a href="#" class="">${loginUser.nickname}</a>님 환영합니다.</li>
 					<li><a href="${pageContext.request.contextPath}/login" class="">로그아웃</a></li>
 					</c:if>
 					<c:if test="${loginUser==null}">
