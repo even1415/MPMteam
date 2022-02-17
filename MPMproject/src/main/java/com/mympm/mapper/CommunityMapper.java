@@ -11,4 +11,5 @@ public interface CommunityMapper {
 		List<CommunityVO> ctreadList(); //전체 커뮤니티 게시글 조회
 		int updateUsernum(CommunityVO cvo); //커뮤니티 게시글 수정
 		int deleteUsernum(int ct_idx); //커뮤니티 게시글 삭제
+		CommunityVO selectCommunityByIdx(int idx);//커뮤니티 idx 조회
 }

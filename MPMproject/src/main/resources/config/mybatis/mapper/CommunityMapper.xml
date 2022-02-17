@@ -15,4 +15,8 @@
    <select id="ctreadList" resultType="Community">
    		select * from community
    </select>
+   
+   <select id="selectCommunityByIdx" parameterType="int" resultType="Community">
+   		select * from community where ct_idx=#{value}
+   </select>
 </mapper>

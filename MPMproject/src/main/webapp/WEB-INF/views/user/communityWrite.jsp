@@ -9,7 +9,7 @@
 <div class="container" style="margin-top:120px">
 	<section style="height:80%;padding-top:40px;background-color:#fff;height:100%;" role="main">
 
-<form name="bf" action="${pageContext.request.contextPath}/user/CommunityWriteEnd" method="post">
+<form name="bf" action="CommunityWriteEnd" method="post">
 
 <div class="text_inp_wrap" style="height:100%;">
 	<div class="subject">
