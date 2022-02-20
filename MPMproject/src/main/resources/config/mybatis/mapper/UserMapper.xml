@@ -16,9 +16,13 @@
    		select * from mpm_member where userid=#{userid} and pwd=#{pwd}
    </select> -->
    
-   <insert id="signup"> <!-- 회원가입 -->
+   <insert id="insertMember" parameterType="User"> <!-- 회원가입 -->
    		insert into mpm_member(idx, nickname, userid, email, pwd)
    		values(MPM_MEMBER_SEQ.nextval, #{nickname}, #{userid}, #{email}, #{pwd})
    </insert>
+   
+   <select id="idCheck" parameterType="User" resultType="int"> <!-- 회원가입 중 아이디 중복체크 -->
+   		select count(*) from mpm_member where userid = #{userid}
+   </select>
    
 </mapper>

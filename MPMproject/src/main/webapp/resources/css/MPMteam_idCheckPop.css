@@ -1,0 +1,56 @@
+@charset "EUC-KR";
+
+:root {
+	--nav: #14279B;
+	--btn: #3D56B2;
+	--font: rgb(189, 224, 255);
+	--bg: #E6E6E6;
+}
+
+#idchecktitle {
+	 text-align: center;
+}
+
+#idCheckTable {
+	margin-top: 35px;
+	width : 100%;
+}
+
+#idCheckTable td, th {
+    border: 2px solid var(--nav);
+}
+
+#checkid {
+	width: 100%;
+	height: 50px;
+}
+
+#idcheckstart, #idcheckinsert {
+	background-color: var(--btn);
+    color: var(--font);
+	width: 100%;
+	height: 50px;
+}
+
+#printtd {
+	text-align: center;
+}
+
+#inserttd {
+	width: 30%;
+	text-align: center;
+}
+
+#NullidCheckMsg {
+	color: blue;
+	display: none;
+}
+
+#IsidCheckMsg {
+	color: red;
+	display: none;
+}
+
+#BaseidCheckMsg {
+	color: black;
+}

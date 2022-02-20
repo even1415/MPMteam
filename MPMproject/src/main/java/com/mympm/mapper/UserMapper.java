@@ -10,7 +10,7 @@ public interface UserMapper {
 	public MemberVO loginCheck(MemberVO user) throws NotMemberException;
 	
 	/** [회원가입 관련]-아이디 중복 여부를 체크하는 메소드 */
-	   public boolean idCheck(String userid);
+	   public int idCheck(String userid);
 
 	   public List<MemberVO> getAllMembers();
 

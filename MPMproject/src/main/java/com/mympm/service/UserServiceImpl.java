@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -16,13 +17,23 @@ import com.mympm.mapper.UserMapper;
 @Service("userServiceImpl")
 public class UserServiceImpl implements UserService {
 	
+	private static Logger logger = LoggerFactory.getLogger(LoginController.class);
+	
 	@Inject
 	private UserMapper userMapper;
+	
+	@Inject
+	private SqlSession sql;
 
 	@Override
 	public int insertMember(MemberVO user) {
 		// TODO Auto-generated method stub
-		return 0;
+		logger.info("user={}", user);
+		
+		//sql.insert("UserMapper.signup", user);
+		this.userMapper.insertMember(user);
+		
+		return 1;
 	}
 
 	@Override
@@ -48,9 +59,12 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public boolean idCheck(String userid) {
+	public int idCheck(String userid) {
+		//MemberVO user = this.userMapper.findMemberByUserid(userid);
 		// TODO Auto-generated method stub
-		return false;
+		int check = userMapper.idCheck(userid);
+		
+		return check;
 	}
 
 	@Override
