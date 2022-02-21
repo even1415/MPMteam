@@ -34,7 +34,7 @@
 			</h1>
 			<nav role="navigation" class="nav_gnb">
 				<ul>
-					<li menu="[object Object]"><a href="${pageContext.request.contextPath}/board/noticeList" class="">
+					<li menu="[object Object]"><a href="${pageContext.request.contextPath}/board/boardList" class="">
 							공지사항 </a></li>
 					<li menu="[object Object]"><a href="${pageContext.request.contextPath}/board/communityList" class="">
 							커뮤니티</a></li>
@@ -58,7 +58,7 @@
 			<div role="navigation" class="snb_w">
 				<ul>
 					<c:if test="${loginUser!=null}">
-					<li><a href="#" class="">${loginUser.nickname}</a>님 환영합니다.</li>
+					<li><a href="${pageContext.request.contextPath}/edit" class="">${loginUser.nickname}</a>님 환영합니다.</li>
 					<li><a href="${pageContext.request.contextPath}/logout" class="">로그아웃</a></li>
 					</c:if>
 					<c:if test="${loginUser==null}">

@@ -24,5 +24,11 @@
    <select id="idCheck" parameterType="User" resultType="int"> <!-- 회원가입 중 아이디 중복체크 -->
    		select count(*) from mpm_member where userid = #{userid}
    </select>
+   <update id="editMember" parameterType="User">
+		update mpm_member set pwd=#{pwd}, nickname=#{nickname}, email=#{email} where idx = #{idx}
+	</update>
+	 <delete id="deleteMember" parameterType="int">
+   		delete from mpm_member where idx = #{idx}
+   </delete>
    
 </mapper>
