@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mympm.mapper.MusicMapper">
+
+	<!-- 음원 목록 추가 -->
+	<insert id="insertMusic" parameterType="Music">
+		<selectKey keyProperty="midx" keyColumn="midx"
+			order="BEFORE" resultType="int">
+			select music_seq.nextval from dual
+		</selectKey>
+
+		insert into music
+		values(#{midx},#{mtitle},#{mcoment},#{mlyrics},sysdate,0,#{originFilename},#{filesize},#{playtime},#{idx_fk}
+		,#{album},#{martist})
+	</insert>
+
+	<!-- 음원 목록 조회 -->
+	<select id="listMusic" parameterType="Music" resultType="Music">
+		select *
+		from (
+		select a.*, rownum rn from
+		(select m.*,mm.nickname
+		from music m
+		join
+		mpm_member mm on m.idx_fk = mm.idx
+		order by m.mdate desc)
+		a) where
+		rn
+		between #{start} and #{end}
+	</select>
+
+	<!-- getTotalCount -->
+	<select id="getTotalCount" resultType="int">
+		select count(midx) 
+		from music
+	</select>
+	
+	<!-- 음원 목록 수정 폼 -->
+	<select id="editList" parameterType="Music" resultType="Music">
+		select * from music where midx=#{midx}
+	</select>
+	
+	<!-- 음원 수정 -->
+	<update id="editMusic" parameterType="Music">
+		update music set mtitle=#{mtitle}, mcoment=#{mcoment},mlyrics=#{mlyrics},mdate=sysdate,
+		filename=#{originFilename},filesize=#{filesize},playtime=#{playtime},album=#{album},martist=#{martist}
+		where midx=#{midx}
+	</update>
+	
+	<!-- 조회수 증가 -->
+	<update id="updateMReadnum" parameterType="int">
+		update music set mreadnum=mreadnum+1 where midx=#{midx}
+	</update>
+	
+	<!-- 음원 상세보기 -->
+	<select id="Music" parameterType="int" resultType="Music">
+		select midx,mtitle,mcoment,mlyrics,mdate,mreadnum,
+		substr(filename,1,instr(filename,'.',1)-1) filename
+		,filesize,playtime,idx_fk,album,martist
+		from music where midx=#{midx}
+	</select>
+</mapper>

@@ -10,7 +10,7 @@
 src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <c:import url="/common/top" />
 <div class="container">
-<form action="musicInsertEnd" method="post" name="musicInsert">
+<form action="musicInsertEnd" method="post" name="musicInsert" enctype="multipart/form-data">
 		<table class="table">
 			<tr>
 				<th>제목</th>
@@ -38,11 +38,11 @@ src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></scri
 			</tr>
 			<tr>
 				<th>음원 파일</th>
-				<td><input type="file" name="filename" id="filename" required></td>
+				<td><input type="file" name="mfilename" id="filename" required></td>
 			</tr>
 			<tr>
 				<th>앨범 사진</th>
-				<td><input type="file" name="album" id="album" required></td>
+				<td><input type="file" name="mafilename" id="afilename" required></td>
 			</tr>
 		</table>
 		<input class="btn" type="submit" value="음원 등록">

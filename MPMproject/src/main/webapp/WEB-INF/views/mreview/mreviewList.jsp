@@ -10,7 +10,7 @@
 src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <div id="mreviewL">
 	<div id="t1">
-		<textarea name="mr_content" id="mr_content" rows="10"
+		<textarea name="mr_content" id="mr_content" rows="10" 
 		cols="60" maxlength="2000" disabled>[:이름:]&nbsp;댓글&nbsp;[날짜]&#10;줄넘김</textarea><!-- &#10; : 줄넘김 -->
 	</div>
 </div>

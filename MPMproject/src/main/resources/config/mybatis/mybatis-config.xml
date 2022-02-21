@@ -8,6 +8,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
    		<typeAlias type="com.mympm.domain.CommunityVO" alias="Community"/>
    		<typeAlias type="com.mympm.domain.NoticeVO" alias="Notice"/>
    		<typeAlias type="com.mympm.domain.MemberVO" alias="User"/>
+   		<typeAlias type="com.mympm.domain.MusicVO" alias="Music"/>
    </typeAliases>
    
    <!-- 매퍼 정의================================ -->
@@ -15,5 +16,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
    		<mapper resource="config/mybatis/mapper/CommunityMapper.xml"/>
    		<mapper resource="config/mybatis/mapper/NoticeMapper.xml"/>
    		<mapper resource="config/mybatis/mapper/UserMapper.xml"/>
+   		<mapper resource="config/mybatis/mapper/MusicMapper.xml"/>
    </mappers>
 </configuration>

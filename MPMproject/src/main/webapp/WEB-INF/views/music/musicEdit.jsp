@@ -10,44 +10,48 @@
 src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <c:import url="/common/top" />
 <div class="container">
-	<form action="musicEditEnd" method="post" name="musicEditEnd">
+	<form action="musicEditEnd" method="post" name="musicEditEnd" enctype="multipart/form-data">
 		<table class="table">
 			<tr>
 				<th>제목</th>
 				<td id="t1"><input type="text" name="mtitle" id="mtitle"
-					maxlength="80" value="제목"></td>
+					maxlength="80" value="${editArr.mtitle }" required></td>
+			</tr>
+			<tr>
+				<th>가수</th>
+				<td id="t1"><input type="text" name="martist" id="martist"
+					required maxlength="40" value="${editArr.martist }" required></td>
 			</tr>
 			<tr>
 				<th>Comment</th>
 				<td id="t1">
 					<textarea name="mcoment" id="mcoment" rows="4"
-					cols="60" maxlength="200">코멘트</textarea>
+					cols="60" maxlength="200" required>${editArr.mcoment }</textarea>
 				</td>
 			</tr>
 			<tr>
 				<th>가사</th>
 				<td id="t1">
 					<textarea name="mlyrics" id="mlyrics" rows="10"
-						cols="60" maxlength="2000">가사</textarea>
+						cols="60" maxlength="2000" required>${editArr.mlyrics }</textarea>
 				</td>
 			</tr>
 			<tr>
 				<th>음원 파일</th>
 				<td>
-					<span>저장된 음원명</span><br>
-					<input type="file" name="filename" id="filename">
+					<span>${editArr.filename }</span><br>
+					<input type="file" name="mfilename" id="mfilename" required>
 				</td>
 			</tr>
 			<tr>
 				<th>앨범 사진</th>	
 				<td>
-					<span>저장된 사진명</span><br>
-					<input type="file" name="album" id="album">
+					<span>${editArr.album }</span><br>
+					<input type="file" name="mafilename" id="mafilename" required>
 				</td>
 			</tr>
 		</table>
-		<input type="text" id="midx" name="midx" value="midx"> <!-- 파라미터로 넘겨준 midx를 value에 넣어주기 -->
-		<input type="text" id="idx_fk" name="idx_fk" value="idx_fk"> <!-- 파라미터로 넘겨준 idx_fk를 value에 넣어주기 -->
+		<input type="hidden" id="midx" name="midx" value="${editArr.midx }"> <!-- 파라미터로 넘겨준 midx를 value에 넣어주기 -->
 		<input class="btn" type="submit" value="수정">
 	</form>
 </div>

@@ -60,4 +60,11 @@ ALTER TABLE MUSIC ADD IDX_FK NUMBER(8) REFERENCES MEMBER(IDX);
 ALTER TABLE MUSIC ADD ALBUM VARCHAR2(255);
 ALTER TABLE MUSIC ADD MARTIST VARCHAR2(40);
 
+create sequence MUSIC_SEQ
+increment by 1
+start with 1
+nocache;
+
+alter table music modify playtime number(8,2);
+
 commit;

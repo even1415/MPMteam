@@ -14,16 +14,16 @@ src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></scri
 		<tr>
 			<th>
 				<input type="text" name="mtitle" id="mtitle"
-				maxlength="80" value="제목" disabled>
+				maxlength="80" value="${musicList.mtitle }" disabled>
 			</th>
 		</tr>
 		<tr>
 			<th>
 				<input type="text" name="martist" id="martist"
-				maxlength="40" value="가수" disabled>
+				maxlength="40" value="${musicList.martist }" disabled>
 
 				<input type="text" name="sname" id="sname"
-				maxlength="40" value="곡 이름" disabled> <!-- 곡 이름의 name, id는 DB에 filename에서 가져오기 -->
+				maxlength="40" value="${musicList.filename }" disabled> <!-- 곡 이름의 name, id는 DB에 filename에서 가져오기 -->
 				
 				<button class="btn" onclick="musicPlay()">▷</button>
 			</th>
@@ -31,19 +31,19 @@ src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></scri
 		<tr>
 			<th>
 				<textarea name="mcoment" id="mcoment" rows="4"
-				cols="60" maxlength="200" disabled>코멘트</textarea>
+				cols="60" maxlength="200" disabled>${musicList.mcoment }</textarea>
 			</th>
 		</tr>
 		<tr>
 			<th>
 				<textarea name="mlyrics" id="mlyrics" rows="10"
-					cols="60" maxlength="2000" disabled>가사</textarea>
+					cols="60" maxlength="2000" disabled>${musicList.mlyrics }</textarea>
 			</th>
 		</tr>
 		<tr>
 			<th>
-				<a href="javascript:void(0);" onclick="goDown('')">파일명</a> <!-- 물리적 파일이름을 파라미터로 넘기기 -->
-				<label>[파일사이즈 bytes]</label>
+				<a href="javascript:void(0);" onclick="goDown()">${musicList.filename }</a> <!-- 물리적 파일이름을 파라미터로 넘기기 -->
+				<label>[${musicList.filesize } bytes]</label>
 			</th>
 		</tr>
 		<tr>
@@ -56,9 +56,8 @@ src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></scri
 	
 	
 	<!-- ----------------------------------- -->
-	<form name="fileF" action="" method="post">
-		<input type="text" name="filename" value="물리적 파일명"><!-- 물리적 파일명 -->
-		<input type="text" name="originFilename" value="원본파일명"><!-- 원본파일명 -->
+	<form name="fileF" action="fileDown" method="post">
+		<input type="hidden" name="originFilename" value="${musicList.filename }"><!-- 원본파일명 -->
 	</form>
 	<!-- ----------------------------------- -->
 </div>
@@ -68,7 +67,6 @@ src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></scri
 		alert('음악 재생');
 	}
 	function goDown(fname) {
-		//fileF.submit();
-		alert('다운 로드');
+		fileF.submit();
 	}
 </script>
