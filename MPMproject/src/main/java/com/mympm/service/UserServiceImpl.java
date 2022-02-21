@@ -87,14 +87,12 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public int editMember(MemberVO user) {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.userMapper.editMember(user);
 	}
 
 	@Override
 	public int deleteMember(Integer idx) {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.userMapper.deleteMember(idx);
 	}
 
 }
