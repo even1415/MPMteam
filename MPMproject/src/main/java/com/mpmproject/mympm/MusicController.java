@@ -100,8 +100,8 @@ public class MusicController {
 			return "redirect:musicMain";
 		}
 		ServletContext app = req.getServletContext();
-		String UP_DIR = "C:\\MPMteam\\MPMproject\\src\\main\\webapp\\resources\\music\\";
-		String UP_DIR2 = "C:\\MPMteam\\MPMproject\\src\\main\\webapp\\resources\\album\\";
+		String UP_DIR = app.getRealPath("/resources/music");
+		String UP_DIR2 = app.getRealPath("/resources/album");
 		logger.info("UP_DIR={}", UP_DIR);
 		
 		if(!mfilename.isEmpty() && !mafilename.isEmpty()) {
@@ -178,8 +178,8 @@ public class MusicController {
 		music.setIdx_fk(idx_fk);
 		
 		ServletContext app = req.getServletContext();
-		String UP_DIR = "C:\\MPMteam\\MPMproject\\src\\main\\webapp\\resources\\music\\";
-		String UP_DIR2 = "C:\\MPMteam\\MPMproject\\src\\main\\webapp\\resources\\album\\";
+		String UP_DIR = app.getRealPath("/resources/music");
+		String UP_DIR2 = app.getRealPath("/resources/album");
 		logger.info("UP_DIR={}", UP_DIR);
 		
 		if(!mfilename.isEmpty() && !mafilename.isEmpty()) {
@@ -235,7 +235,8 @@ public class MusicController {
 		String str = "attachment; filename="+origin_en;
 		res.setHeader("Content-Disposition", str);
 		
-		String UP_DIR = "C:\\MPMteam\\MPMproject\\src\\main\\webapp\\resources\\music\\";
+		ServletContext app = req.getServletContext();
+		String UP_DIR = app.getRealPath("/resources/music");
 		
 		File file = new File(UP_DIR, originFilename);
 		FileCopyUtils.copy(new FileInputStream(file), res.getOutputStream());
