@@ -101,7 +101,7 @@ public class MusicController {
 		}
 		ServletContext app = req.getServletContext();
 		String UP_DIR = "C:\\MPMteam\\MPMproject\\src\\main\\webapp\\resources\\music\\";
-		String UP_DIR2 = "C:\\MPMteam\\MPMproject\\src\\main\\webapp\\resources\\alnum\\";
+		String UP_DIR2 = "C:\\MPMteam\\MPMproject\\src\\main\\webapp\\resources\\album\\";
 		logger.info("UP_DIR={}", UP_DIR);
 		
 		if(!mfilename.isEmpty() && !mafilename.isEmpty()) {
@@ -179,7 +179,7 @@ public class MusicController {
 		
 		ServletContext app = req.getServletContext();
 		String UP_DIR = "C:\\MPMteam\\MPMproject\\src\\main\\webapp\\resources\\music\\";
-		String UP_DIR2 = "C:\\MPMteam\\MPMproject\\src\\main\\webapp\\resources\\alnum\\";
+		String UP_DIR2 = "C:\\MPMteam\\MPMproject\\src\\main\\webapp\\resources\\album\\";
 		logger.info("UP_DIR={}", UP_DIR);
 		
 		if(!mfilename.isEmpty() && !mafilename.isEmpty()) {
