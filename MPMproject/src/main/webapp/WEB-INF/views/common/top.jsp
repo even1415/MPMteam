@@ -59,7 +59,7 @@
 				<ul>
 					<c:if test="${loginUser!=null}">
 					<li><a href="#" class="">${loginUser.nickname}</a>님 환영합니다.</li>
-					<li><a href="${pageContext.request.contextPath}/login" class="">로그아웃</a></li>
+					<li><a href="${pageContext.request.contextPath}/logout" class="">로그아웃</a></li>
 					</c:if>
 					<c:if test="${loginUser==null}">
 					<li><a href="#" class=""></a>로그인이 필요합니다.</li>

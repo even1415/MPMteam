@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.inject.Inject;
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -117,6 +118,15 @@ public class LoginController {
 		
 		return result;
 	}
+	
+	@RequestMapping(value="/logout")
+    public String logout(HttpServletRequest request) throws Exception{
+        
+		HttpSession session = request.getSession();
+		session.invalidate();
+		
+		return "redirect:../mympm";
+    }
 	
 	@ExceptionHandler(NotMemberException.class)
 	public String excepitonHandler(Exception ex) {
