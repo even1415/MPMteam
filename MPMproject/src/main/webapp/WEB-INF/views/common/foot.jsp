@@ -2,7 +2,8 @@
     pageEncoding="UTF-8"%>
     <meta charset="utf-8">
 <!-- playbar -->
-<!-- <script src="${myctx}/resources/JavaScript/playbarJS.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="${myctx}/resources/JavaScript/playbarJS.js"></script>
 <script>
 
 </script>
@@ -34,7 +35,7 @@
       			</audio>
             </div>
                 <div class="center-bt">
-                    <button class="repeat-bt"></button>
+                    <button class="repeat-bt" onclick="repeatplay()"></button>
                     <button class="previous-bt"></button>
                     <button class="play-bt" id="play-bt" onclick="musicplay()"></button>
                     <button class="stop-bt" id="stop-bt" onclick="musicpause()"></button>
@@ -43,9 +44,10 @@
                 </div>
 
                 <div class="time">
-                    <span>현재시간</span>
-                    <span>&nbsp;/&nbsp;</span>
-                    <span>전체시간</span>
+                	<span id="currentTime"></span>
+                	<progress value="0" id="progress"></progress>
+                    <!-- <span>&nbsp;/&nbsp;</span> -->
+                    <span id="totalTime"></span>
                 </div>
 
             </div>
