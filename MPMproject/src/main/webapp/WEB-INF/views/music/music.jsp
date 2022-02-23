@@ -31,7 +31,9 @@ src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></scri
 				maxlength="40" value="${musicList.albumtitle }" disabled> <!-- 곡 이름의 name, id는 DB에 filename에서 가져오기 -->
 				
 				<button class="btn" onclick="musicPlay()">▷</button>
-				<button class="btn" onclick="playList()">+</button>
+				<c:if test="${loginUser ne null empty loginUser}">
+					<button class="btn" onclick="playList()">+</button>
+				</c:if>
 			</th>
 		</tr>
 		<tr>
@@ -83,6 +85,7 @@ src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></scri
 		<input type="hidden" name="idx_fk" id="idx_fk" value="${musicList.idx_fk}">
 		<input type="hidden" name="album" id="album" value="${musicList.album}">
 		<input type="hidden" name="martist" id="martist" value="${musicList.martist}">
+		<input type="hidden" name="idx" id="idx" value="${loginUser.idx}">
 	</form>
 </div>
 <c:import url="/common/foot" />
