@@ -31,7 +31,7 @@ src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></scri
 				maxlength="40" value="${musicList.albumtitle }" disabled> <!-- 곡 이름의 name, id는 DB에 filename에서 가져오기 -->
 				
 				<button class="btn" onclick="musicPlay()">▷</button>
-				<c:if test="${loginUser ne null empty loginUser}">
+				<c:if test="${loginUser ne null and not empty loginUser}">
 					<button class="btn" onclick="playList()">+</button>
 				</c:if>
 			</th>

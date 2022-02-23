@@ -33,10 +33,10 @@
 				<c:forEach var="music" items="${musicArr }">
 					<tr>
 						<!-- 기능구현 할 때 음원번호를 파라미터로-->
-						<td onclick="music('${music.midx }')">${music.mtitle }</td>
-						<td onclick="music('${music.midx }')">${music.nickname }</td>
-						<td onclick="music('${music.midx }')">${music.mdate }</td>
-						<td onclick="music('${music.midx }')">${music.mreadnum }</td>
+						<td onclick="music('${music.midx }','${loginUser}')">${music.mtitle }</td>
+						<td onclick="music('${music.midx }','${loginUser}')">${music.nickname }</td>
+						<td onclick="music('${music.midx }','${loginUser}')">${music.mdate }</td>
+						<td onclick="music('${music.midx }','${loginUser}')">${music.mreadnum }</td>
 						<c:if test="${loginUser.idx eq music.idx_fk }">
 							<td><a href="javascript:void(0);" onclick="musicEdit('${music.midx }')">수정</a>
 							<!-- 기능구현 할 때 회원번호가 일치하는 유저만 보이게 구현하기, 회원번호와 음원번호를 파라미터로  -->
@@ -59,6 +59,7 @@
 	<button class="btn" onclick="musicInsert()">음원 등록</button>
 	<form name="mF">
 		<input type="hidden" name="midx" id="midx">
+		<input type="hidden" name="loginUser" id="loginUser">
 	</form>
 </div>
 <c:import url="/common/foot" />
@@ -81,8 +82,9 @@
 	function musicPlay() {
 		alert('음악 재생');
 	}
-	function music(midx) {
+	function music(midx,loginUser) {
 		mF.midx.value=midx;
+		mF.loginUser.value=loginUser;
 		mF.method="post";
 		mF.action="${myctx}/music/music";
 		mF.submit();

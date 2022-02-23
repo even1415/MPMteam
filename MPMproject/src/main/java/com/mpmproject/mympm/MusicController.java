@@ -146,8 +146,10 @@ public class MusicController {
 
 	//댓글 있는 음원 페이지
 	@RequestMapping("/music")
-	public String music(Model m,@RequestParam(value = "midx", defaultValue = "0") int midx) {
+	public String music(Model m,@RequestParam(value = "midx", defaultValue = "0") int midx,
+			HttpSession session) {
 		logger.info("music/music");
+		MemberVO loginUser=(MemberVO)session.getAttribute("loginUser");
 		
 		if(midx == 0) {
 			return "redirect:musicMain";
@@ -155,6 +157,7 @@ public class MusicController {
 		int n = this.musicService.updateMReadnum(midx);
 		MusicVO musicList = this.musicService.Music(midx);
 		m.addAttribute("musicList",musicList);
+		m.addAttribute("loginUser",loginUser);
 		return "music/music";
 	}
 
