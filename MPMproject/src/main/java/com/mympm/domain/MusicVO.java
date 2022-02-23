@@ -19,6 +19,7 @@ public class MusicVO {
 	private String afilename;
 	private String martist;
 	private String nickname;
+	private String albumtitle;
 
 	private int cpage;// 현재 보여줄 페이지 번호
 	private int pageSize;// 한 페이지 당 보여줄 목록 개수
@@ -158,6 +159,14 @@ public class MusicVO {
 		this.afilename = afilename;
 	}
 
+	public String getAlbumtitle() {
+		return albumtitle;
+	}
+
+	public void setAlbumtitle(String albumtitle) {
+		this.albumtitle = albumtitle;
+	}
+
 	public int getCpage() {
 		return cpage;
 	}
@@ -269,15 +278,17 @@ public class MusicVO {
 
 		return buf.toString();
 	}
-	
+
 	@Override
 	public String toString() {
 		return "MusicVO [midx=" + midx + ", mtitle=" + mtitle + ", mcoment=" + mcoment + ", mlyrics=" + mlyrics
 				+ ", mdate=" + mdate + ", mreadnum=" + mreadnum + ", filename=" + filename + ", originFilename="
 				+ originFilename + ", filesize=" + filesize + ", playtime=" + playtime + ", idx_fk=" + idx_fk
 				+ ", album=" + album + ", afilename=" + afilename + ", martist=" + martist + ", nickname=" + nickname
-				+ ", cpage=" + cpage + ", pageSize=" + pageSize + ", totalCount=" + totalCount + ", pageCount="
-				+ pageCount + ", start=" + start + ", end=" + end + ", pagingBlock=" + pagingBlock + ", prevBlock="
-				+ prevBlock + ", nextBlock=" + nextBlock + "]";
+				+ ", albumtitle=" + albumtitle + ", cpage=" + cpage + ", pageSize=" + pageSize + ", totalCount="
+				+ totalCount + ", pageCount=" + pageCount + ", start=" + start + ", end=" + end + ", pagingBlock="
+				+ pagingBlock + ", prevBlock=" + prevBlock + ", nextBlock=" + nextBlock + "]";
 	}
+	
+	
 }

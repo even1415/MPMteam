@@ -36,9 +36,8 @@ public class MusicServiceImpl implements MusicService {
 	}
 
 	@Override
-	public int deleteMusic(int idx_fk) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int deleteMusic(int midx) {
+		return this.musicMapper.deleteMusic(midx);
 	}
 
 	@Override

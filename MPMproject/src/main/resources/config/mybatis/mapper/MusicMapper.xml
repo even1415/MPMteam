@@ -56,9 +56,14 @@
 	
 	<!-- 음원 상세보기 -->
 	<select id="Music" parameterType="int" resultType="Music">
-		select midx,mtitle,mcoment,mlyrics,mdate,mreadnum,
-		substr(filename,1,instr(filename,'.',1)-1) filename
+		select midx,mtitle,mcoment,mlyrics,mdate,mreadnum,filename,
+		substr(filename,1,instr(filename,'.',1)-1) albumtitle
 		,filesize,playtime,idx_fk,album,martist
 		from music where midx=#{midx}
 	</select>
+	
+	<!-- 음원 삭제 -->
+	<delete id="deleteMusic" parameterType="int">
+		delete from music where midx=#{value}
+	</delete>
 </mapper>

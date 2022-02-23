@@ -24,8 +24,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.mympm.domain.M_ReviewVO;
 import com.mympm.domain.MemberVO;
 import com.mympm.domain.MusicVO;
+import com.mympm.service.M_ReviewService;
 import com.mympm.service.MusicService;
 
 @Controller
@@ -34,6 +36,9 @@ public class MusicController {
 
 	@Inject
 	private MusicService musicService;
+	
+	@Inject
+	private M_ReviewService m_reviewService;
 
 	private static final Logger logger = LoggerFactory.getLogger(MusicController.class);
 
@@ -99,10 +104,10 @@ public class MusicController {
 		if (music == null) {
 			return "redirect:musicMain";
 		}
+		
 		ServletContext app = req.getServletContext();
 		String UP_DIR = app.getRealPath("/resources/music");
 		String UP_DIR2 = app.getRealPath("/resources/album");
-		logger.info("UP_DIR={}", UP_DIR);
 		
 		if(!mfilename.isEmpty() && !mafilename.isEmpty()) {
 			//1) 먼저 첨부파일명, 파일크기를 알아내자
@@ -147,7 +152,6 @@ public class MusicController {
 		if(midx == 0) {
 			return "redirect:musicMain";
 		}
-		
 		int n = this.musicService.updateMReadnum(midx);
 		MusicVO musicList = this.musicService.Music(midx);
 		m.addAttribute("musicList",musicList);
@@ -158,8 +162,8 @@ public class MusicController {
 	@PostMapping("/musicInsertEnd")
 	public String musicInsertEnd(Model m, @ModelAttribute("music") MusicVO music,
 			@RequestParam("mfilename") MultipartFile mfilename, 
-			@RequestParam("mafilename") MultipartFile mafilename
-			,HttpServletRequest req,HttpSession session) {
+			@RequestParam("mafilename") MultipartFile mafilename,
+			HttpServletRequest req,HttpSession session) {
 		MemberVO loginUser=(MemberVO)session.getAttribute("loginUser");
 		int idx_fk=loginUser.getIdx();
 		logger.info("loginUser={}",loginUser);
@@ -177,10 +181,10 @@ public class MusicController {
 
 		music.setIdx_fk(idx_fk);
 		
+		
 		ServletContext app = req.getServletContext();
 		String UP_DIR = app.getRealPath("/resources/music");
 		String UP_DIR2 = app.getRealPath("/resources/album");
-		logger.info("UP_DIR={}", UP_DIR);
 		
 		if(!mfilename.isEmpty() && !mafilename.isEmpty()) {
 			//1) 먼저 첨부파일명, 파일크기를 알아내자
@@ -215,19 +219,82 @@ public class MusicController {
 		int n = this.musicService.insertMusic(music);
 		return "redirect:musicMain";
 	}
-
-	@ExceptionHandler(NullPointerException.class)
-	public String excepitonHandler(Exception ex) {
-		
-		return "common/errorAlert";
-	}
 	
+	@PostMapping("/musicDelete")
+	public String musicDelete(Model m,HttpServletRequest req, @RequestParam(defaultValue = "0") int midx,
+			@ModelAttribute("mr") M_ReviewVO mr) {
+		
+		if(midx==0) {
+			return "redirect:musicMain";
+		}
+		
+		MusicVO music = this.musicService.Music(midx);
+		List<M_ReviewVO> mreview = this.m_reviewService.listMusic(mr);
+		
+		ServletContext app = req.getServletContext();
+		String UP_DIR = app.getRealPath("/resources/music");
+		String UP_DIR2 = app.getRealPath("/resources/album");
+		
+		if(mreview == null) {
+			this.musicService.deleteMusic(midx);
+		}
+		else if(mreview != null) {
+			this.m_reviewService.DelM_Review(mr.getMr_idx());
+			this.musicService.deleteMusic(midx);
+		}
+		
+		if(music.getFilename() !=null) {
+			File df = new File(UP_DIR, music.getFilename());
+			if(df.exists()) {
+				boolean b = df.delete();
+				logger.info("파일 삭제1 : {}",b);
+			}
+		}
+		logger.info("music.getAfilename()={}",music.getAlbum());
+		if(music.getAlbum() !=null){
+			File da = new File(UP_DIR2, music.getAlbum());//
+			if(da.exists()) {
+				boolean b = da.delete();
+				logger.info("파일 삭제2 : {}",b);
+			}
+		}
+		
+		return "redirect:musicMain";
+	}
+
+	// 음원 댓글 매핑-------------------------------------------------------------
+	@RequestMapping("/mreviewInsert")
+	public void mreviewInsertView() {}
+
+	@RequestMapping("/mreviewList")
+	public void mreviewListView() {}
+	
+	//음원 댓글 등록
+	@PostMapping("/mreviewInsertEnd")
+	public String mreviewInsertEnd(Model m, @ModelAttribute("m_review") M_ReviewVO m_review) {
+		logger.info("mreviewInsertEnd");
+		if(m_review == null) {
+			return "redirect:musicMain";
+		}
+		logger.info("m_review={}",m_review);
+		int n = this.m_reviewService.insertM_Review(m_review);
+		return "redirect:music?midx="+m_review.getMidx();
+	}
+	@PostMapping("/mreviewDel")
+	public String mreviewDel(Model m, @RequestParam(defaultValue = "0") int mr_idx,@RequestParam("midx") int midx) {
+		
+		if(mr_idx==0) {
+			return "redirect:music?midx="+midx;
+		}
+		int n = this.m_reviewService.DelM_Review(mr_idx);
+		return "redirect:music?midx="+midx;
+	}
 	//음원 파일 다운로드
 	@RequestMapping("/fileDown")
 	public void fileDownload(HttpServletRequest req, HttpServletResponse res) throws FileNotFoundException, IOException {
 		//다운로드 할 파일명 받기
 		logger.info("filename={}",req.getParameter("originFilename"));
-		String originFilename = req.getParameter("originFilename")+".mp3";
+		String originFilename = req.getParameter("originFilename");
 		
 		res.setContentType("application/octet-stream");
 		//한글파일명 처리
@@ -241,13 +308,10 @@ public class MusicController {
 		File file = new File(UP_DIR, originFilename);
 		FileCopyUtils.copy(new FileInputStream(file), res.getOutputStream());
 	}
-
-	// 음원 댓글 매핑-------------------------------------------------------------
-	@RequestMapping("/mreviewInsert")
-	public void mreviewInsertView() {
-	}
-
-	@RequestMapping("/mreviewList")
-	public void mreviewListView() {
+	
+	@ExceptionHandler(NullPointerException.class)
+	public String excepitonHandler(Exception ex) {
+		
+		return "common/errorAlert";
 	}
 }

@@ -40,7 +40,7 @@
 						<c:if test="${loginUser.idx eq music.idx_fk }">
 							<td><a href="javascript:void(0);" onclick="musicEdit('${music.midx }')">수정</a>
 							<!-- 기능구현 할 때 회원번호가 일치하는 유저만 보이게 구현하기, 회원번호와 음원번호를 파라미터로  -->
-							&nbsp; <a href="javascript:void(0);" onclick="musicDel()">삭제</a>
+							&nbsp; <a href="javascript:void(0);" onclick="musicDel('${music.midx }')">삭제</a>
 							<!-- 기능구현 할 때 로그인하면 보이게 구현하기  -->
 							</td>
 						</c:if>
@@ -72,8 +72,11 @@
 		mF.action="${myctx}/music/musicEdit";
 		mF.submit();
 	}
-	function musicDel() {
-		alert('삭제');
+	function musicDel(midx) {
+		mF.midx.value=midx;
+		mF.method="post";
+		mF.action="${myctx}/music/musicDelete";
+		mF.submit();
 	}
 	function musicPlay() {
 		alert('음악 재생');

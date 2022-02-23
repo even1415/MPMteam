@@ -72,3 +72,10 @@ ALTER TABLE M_REVIEW
 		REFERENCES MUSIC (
 			MIDX
 		);
+
+create sequence M_REVIEW_SEQ
+increment by 1
+start with 1
+nocache;
+
+commit;

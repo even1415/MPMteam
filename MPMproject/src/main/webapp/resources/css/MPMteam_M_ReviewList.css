@@ -5,15 +5,17 @@
 	margin: auto 11.333%;
 	min-height: 600px;
 }
-#t1{
+div#mreviewL{
 	text-align: center;
 	background-color: var(--bg);
+	color: white;
 }
 table{
 	border: thin solid #E6E6E6;
 }
-textarea:disabled{
-	resize: none;
-	background: white;
-	color: black;
+div#t1 {
+	margin: 0 auto;
+    width: 500px;
+    height: 200px;
+    overflow-y: auto;
 }

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mympm.mapper.M_ReviewMapper">
+   
+   <!-- 음원 댓글 등록 -->
+   <insert id="insertM_Review" parameterType="MReview">
+   		<selectKey keyProperty="mr_idx" keyColumn="mr_idx"
+			order="BEFORE" resultType="int">
+			select m_review_seq.nextval from dual
+		</selectKey>
+		insert into m_review values(#{mr_idx},#{mr_content},sysdate,#{idx_fk},#{midx})
+   </insert>
+   
+   <!-- 음원 댓글 목록 -->
+   <select id="listMusic" parameterType="MReview" resultType="MReview">
+		 select mr_idx,mr_content,mr_date,
+		 (select nickname from mpm_member where idx=#{idx_fk}) nickname,idx_fk
+		 ,midx from m_review where midx=#{midx}
+   </select>
+   
+   <!-- 음원 댓글 삭제 -->
+   <delete id="DelM_Review" parameterType="int">
+   		delete from m_review where mr_idx=#{value}
+   </delete>
+</mapper>

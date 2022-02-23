@@ -13,7 +13,7 @@ public interface MusicService {
 	public int updateMReadnum(int midx);
 	public MusicVO Music(int midx);
 	
-	public int deleteMusic(int idx_fk);
+	public int deleteMusic(int midx);
 	public int editMusic(MusicVO music);
 	public MusicVO editList(int midx);
 }

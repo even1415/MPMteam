@@ -11,10 +11,12 @@ src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></scri
 <div id="mreviewF">
 	<form action="mreviewInsertEnd" method="post" name="mreviewInsertEnd">
 		<div id="t1">
-			<span id="sp1">로그인한 회원 아이디</span>
+			<span id="sp1">${loginUser.nickname }</span>
 			&nbsp;
 			<input type="text" name="mr_content" id="mr_content">
 			<button class="btn" type="submit">댓글쓰기</button>
 		</div>
+		<input type="hidden" name="midx" id="midx" value="${musicList.midx }">
+		<input type="hidden" name="idx_fk" id="idx_fk" value="${loginUser.idx }">
 	</form>
 </div>

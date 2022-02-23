@@ -13,6 +13,11 @@ src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></scri
 	<table class="table">
 		<tr>
 			<th>
+				<img src="${myctx}/resources/album/${musicList.album}">
+			</th>
+		</tr>
+		<tr>
+			<th>
 				<input type="text" name="mtitle" id="mtitle"
 				maxlength="80" value="${musicList.mtitle }" disabled>
 			</th>
@@ -23,9 +28,10 @@ src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></scri
 				maxlength="40" value="${musicList.martist }" disabled>
 
 				<input type="text" name="sname" id="sname"
-				maxlength="40" value="${musicList.filename }" disabled> <!-- 곡 이름의 name, id는 DB에 filename에서 가져오기 -->
+				maxlength="40" value="${musicList.albumtitle }" disabled> <!-- 곡 이름의 name, id는 DB에 filename에서 가져오기 -->
 				
 				<button class="btn" onclick="musicPlay()">▷</button>
+				<button class="btn" onclick="playList()">+</button>
 			</th>
 		</tr>
 		<tr>
@@ -48,7 +54,10 @@ src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></scri
 		</tr>
 		<tr>
 			<th>
-				<c:import url="/mreview/mreviewInsert"/><br>
+				<c:if test="${loginUser ne null or not empty loginUser}">
+					<c:import url="/mreview/mreviewInsert"/>
+				</c:if>
+				<br>
 				<c:import url="/mreview/mreviewList"/>
 			</th>
 		</tr>
@@ -59,7 +68,22 @@ src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></scri
 	<form name="fileF" action="fileDown" method="post">
 		<input type="hidden" name="originFilename" value="${musicList.filename }"><!-- 원본파일명 -->
 	</form>
-	<!-- ----------------------------------- -->
+	<!-- ----------------------------------- -->	
+	<form name="playF" action="playList" method="post">
+		<input type="hidden" name="midx" id="midx" value="${musicList.midx}">
+		<input type="hidden" name="mtitle" id="mtitle" value="${musicList.mtitle}">
+		<input type="hidden" name="mcoment" id="mcoment" value="${musicList.mcoment}">
+		<input type="hidden" name="mlyrics" id="mlyrics" value="${musicList.mlyrics}">
+		<input type="hidden" name="mdate" id="mdate" value="${musicList.mdate}">
+		<input type="hidden" name="mreadnum" id="mreadnum" value="${musicList.mreadnum}">
+		<input type="hidden" name="filename" id="filename" value="${musicList.filename}">
+		<input type="hidden" name="albumtitle" id="albumtitle" value="${musicList.albumtitle}">
+		<input type="hidden" name="filesize" id="filesize" value="${musicList.filesize}">
+		<input type="hidden" name="playtime" id="playtime" value="${musicList.playtime}">
+		<input type="hidden" name="idx_fk" id="idx_fk" value="${musicList.idx_fk}">
+		<input type="hidden" name="album" id="album" value="${musicList.album}">
+		<input type="hidden" name="martist" id="martist" value="${musicList.martist}">
+	</form>
 </div>
 <c:import url="/common/foot" />
 <script>
@@ -68,5 +92,8 @@ src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></scri
 	}
 	function goDown(fname) {
 		fileF.submit();
+	}
+	function playList() {
+		playF.submit();
 	}
 </script>
