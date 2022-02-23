@@ -15,9 +15,7 @@
    
    <!-- 음원 댓글 목록 -->
    <select id="listMusic" parameterType="MReview" resultType="MReview">
-		 select mr_idx,mr_content,mr_date,
-		 (select nickname from mpm_member where idx=#{idx_fk}) nickname,idx_fk
-		 ,midx from m_review where midx=#{midx}
+		 select mr.*, mm.nickname from m_review mr join mpm_member mm on mr.idx_fk=mm.idx
    </select>
    
    <!-- 음원 댓글 삭제 -->

@@ -15,6 +15,7 @@ import com.mympm.domain.M_ReviewVO;
 import com.mympm.domain.MusicVO;
 import com.mympm.service.M_ReviewService;
 import com.mympm.service.MusicService;
+import com.mympm.service.UserService;
 
 @Controller
 @RequestMapping("/mreview")
@@ -26,6 +27,8 @@ public class MReviewController {
 	private M_ReviewService m_reviewService;
 	@Inject
 	private MusicService musicService;
+	@Inject
+	private UserService userService;
 	
 	@RequestMapping("/mreviewInsert")
 	public String mreviewInsert() {

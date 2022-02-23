@@ -71,6 +71,7 @@ src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></scri
 		<input type="hidden" name="originFilename" value="${musicList.filename }"><!-- 원본파일명 -->
 	</form>
 	<!-- ----------------------------------- -->	
+	<!-- 폼 -->
 	<form name="playF" action="playList" method="post">
 		<input type="hidden" name="midx" id="midx" value="${musicList.midx}">
 		<input type="hidden" name="mtitle" id="mtitle" value="${musicList.mtitle}">

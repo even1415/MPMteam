@@ -24,6 +24,7 @@ src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></scri
 		</c:if>
 	</div>
 </div>
+<!-- 폼 -->
 <form name="mrf">
 	<input type="hidden" name="mr_idx" id="mr_idx" value="">
 	<input type="hidden" name="midx" id="midx" value="">

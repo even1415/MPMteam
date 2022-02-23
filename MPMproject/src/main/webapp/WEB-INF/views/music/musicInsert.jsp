@@ -15,18 +15,18 @@ src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></scri
 			<tr>
 				<th>제목</th>
 				<td><input type="text" name="mtitle" id="mtitle"
-					required maxlength="80"></td>
+					required maxlength="25"></td>
 			</tr>
 			<tr>
 				<th>가수</th>
 				<td><input type="text" name="martist" id="martist"
-					required maxlength="40"></td>
+					required maxlength="20"></td>
 			</tr>
 			<tr>
 				<th>Comment</th>
 				<td>
 					<textarea name="mcoment" id="mcoment" rows="4"
-					cols="60" required maxlength="200"></textarea>
+					cols="60" required maxlength="100"></textarea>
 				</td>
 			</tr>
 			<tr>
