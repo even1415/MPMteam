@@ -29,4 +29,9 @@ public class M_ReviewServiceImpl implements M_ReviewService{
 		return this.m_reviewMapper.listMusic(m_review);
 	}
 
+	@Override
+	public int DelM_ReviewAll(int midx) {
+		return this.m_reviewMapper.DelM_ReviewAll(midx);
+	}
+
 }

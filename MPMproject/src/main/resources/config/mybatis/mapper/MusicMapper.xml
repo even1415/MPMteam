@@ -64,6 +64,6 @@
 	
 	<!-- 음원 삭제 -->
 	<delete id="deleteMusic" parameterType="int">
-		delete from music where midx=#{value}
+		delete from music where midx=#{midx}
 	</delete>
 </mapper>

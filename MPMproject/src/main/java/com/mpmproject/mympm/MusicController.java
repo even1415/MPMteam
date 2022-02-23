@@ -243,7 +243,7 @@ public class MusicController {
 		}
 		//리뷰가 있을경우 삭제처리
 		else if(mreview != null) {
-			this.m_reviewService.DelM_Review(mr.getMr_idx());
+			this.m_reviewService.DelM_ReviewAll(midx);
 			this.musicService.deleteMusic(midx);
 		}
 		

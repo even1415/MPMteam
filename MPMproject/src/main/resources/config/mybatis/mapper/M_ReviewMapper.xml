@@ -22,6 +22,11 @@
    
    <!-- 음원 댓글 삭제 -->
    <delete id="DelM_Review" parameterType="int">
-   		delete from m_review where mr_idx=#{value}
+   		delete from m_review where mr_idx=#{mr_idx}
+   </delete>
+   
+   <!-- 음원 댓글 전체 삭제 -->
+   <delete id="DelM_ReviewAll" parameterType="int" >
+   		delete from m_review where midx=#{midx}
    </delete>
 </mapper>
