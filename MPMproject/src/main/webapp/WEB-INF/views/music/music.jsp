@@ -13,7 +13,7 @@ src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></scri
 	<table class="table">
 		<tr>
 			<th>
-				<img src="${myctx}/resources/album/${musicList.album}">
+				<img id="img1" src="${myctx}/resources/album/${musicList.album}">
 			</th>
 		</tr>
 		<tr>
@@ -91,7 +91,7 @@ src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></scri
 <c:import url="/common/foot" />
 <script>
 	function musicPlay() {
-		alert('음악 재생');
+		//alert('음악 재생');
 	}
 	function goDown(fname) {
 		fileF.submit();
