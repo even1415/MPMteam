@@ -11,8 +11,9 @@
         <div class="playbar">
             <div class="music-left" >
                 <div class="musicprofile">
-                    <img src="${pageContext.request.contextPath}/resources/img/ss.png" class="musicprofile1" >
+                    <img src="${pageContext.request.contextPath}/resources/img/ss.png" class="musicprofile1" id="albumimg">
                 </div>
+                <input type="hidden" id="albumimg-hidden" value="${pageContext.request.contextPath}/resources/album/${musicList.album}">
                 <input type="hidden" id="title-hidden" value="${musicList.albumtitle}">
                 <input type="hidden" id="artist-hidden" value="${musicList.martist}">
                 <input type="hidden" id="music-hidden" value="${pageContext.request.contextPath}/resources/music/${musicList.filename}">

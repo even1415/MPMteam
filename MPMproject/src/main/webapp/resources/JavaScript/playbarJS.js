@@ -1,6 +1,7 @@
 function setmusic() {
 	if(document.getElementById('audioContainer').src != document.getElementById('music-hidden').value) {
 		document.getElementById('audioContainer').src = document.getElementById('music-hidden').value;
+		document.getElementById('albumimg').src = document.getElementById('albumimg-hidden').value;
 		document.getElementById('music-title').innerHTML = document.getElementById('title-hidden').value;
 		document.getElementById('music-artist').innerHTML = document.getElementById('artist-hidden').value;
 	}
@@ -8,6 +9,8 @@ function setmusic() {
 	//console.log("확인용 : " + document.getElementById('music-hidden').value);
 	//console.log("곡명 : " + document.getElementById('title-hidden').value);
 	//console.log("아티스트 : " + document.getElementById('artist-hidden').value);
+	
+	setTimeout(function() {
 	
 	var audio = document.getElementById('audioContainer');
 	var current = document.getElementById('currentTime');
@@ -30,6 +33,7 @@ function setmusic() {
 	//setCurTime();
 	//setTotalTime();
 	musicplay();
+	}, 1000);
 }
 
 function setCurTime() {
