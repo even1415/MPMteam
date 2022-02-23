@@ -8,6 +8,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
 src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="${myctx}/resources/JavaScript/playbarJS.js"></script>
 <c:import url="/common/top" />
 <div class="container">
 	<table class="table">
@@ -30,7 +31,7 @@ src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></scri
 				<input type="text" name="sname" id="sname"
 				maxlength="40" value="${musicList.albumtitle }" disabled> <!-- 곡 이름의 name, id는 DB에 filename에서 가져오기 -->
 				
-				<button class="btn" onclick="musicPlay()">▷</button>
+				<button class="btn" onclick="setmusic()">▷</button>
 				<c:if test="${loginUser ne null and not empty loginUser}">
 					<button class="btn" onclick="playList()">+</button>
 				</c:if>

@@ -2,29 +2,42 @@
     pageEncoding="UTF-8"%>
     <meta charset="utf-8">
 <!-- playbar -->
+<!-- <script src="${myctx}/resources/JavaScript/playbarJS.js"></script> -->
+<script>
+
+</script>
+
         <div class="playbar">
             <div class="music-left" >
                 <div class="musicprofile">
                     <img src="${pageContext.request.contextPath}/resources/img/ss.png" class="musicprofile1" >
                 </div>
+                <input type="hidden" id="title-hidden" value="${musicList.albumtitle}">
+                <input type="hidden" id="artist-hidden" value="${musicList.martist}">
+                <input type="hidden" id="music-hidden" value="${pageContext.request.contextPath}/resources/music/${musicList.filename}">
                 
                 <div class="artist">
 
                     <div class="music-title">
-                        Love Yourself
+                        <span id="music-title"></span>
                     </div>
                     <div class="music-artist">
-                        justin bieber
+                        <span id="music-artist"></span>
                     </div>
                     
                 </div>
 
                  </div>
             <div class="music-center">
+            <div>
+            	<audio id="audioContainer" src=""> <!-- audio play를 위함 -->
+      			</audio>
+            </div>
                 <div class="center-bt">
                     <button class="repeat-bt"></button>
                     <button class="previous-bt"></button>
-                    <button class="play-bt"></button>
+                    <button class="play-bt" id="play-bt" onclick="musicplay()"></button>
+                    <button class="stop-bt" id="stop-bt" onclick="musicpause()"></button>
                     <button class="next-bt"></button>
                     <button class="shuffle-bt"></button>
                 </div>
@@ -45,7 +58,8 @@
                 <button class="sound-bt"></button>
               </div>
               <div class="soundvolume">
-                  
+                  <input id="soundvolume" type="number" value="100" min="0" max="100" step="10"
+                  onClick="changeVol();" onkeyup="if(window.event.keyCode==13){changeVol()}">
               </div>
                 <div class="mymusic">
                     <button class="list-bt"></button>
@@ -64,7 +78,7 @@
 				<li><a href="/intro" class="">MPM 소개</a></li>
 				<li><a href="/help/notice/1" class="">고객센터</a></li>
 				<li><a href="/help/faq/0/1" class="">공지사항</a></li>
-				<li><a href="/download/pc/app" class="">MPM palyer</a></li>
+				<li><a href="/download/pc/app" class="">MPM player</a></li>
 			</ul>
 		</div>
 		<div class="social_area">

@@ -443,6 +443,17 @@ footer .browser_support{
 	margin: 0 25px 0 25px;
 }
 
+.stop-bt {
+	background-image: url(../img/stop.png);
+	object-fit:cover;
+	width: 34px;
+	height: 34px;
+	border: none;
+	background-repeat: no-repeat;
+	margin: 0 25px 0 25px;
+	display: none;
+}
+
 .next-bt {
 	background-image: url(../img/next.png);
 	width: 24px;
@@ -504,6 +515,14 @@ button {
 	margin-top: 28px;
 }
 
+#soundvolume {
+	margin-top: 34px;
+	border: 2px solid black;
+	width: 50px;
+	height: 20px;
+	text-align: center;
+}
+
 .mymusic {
 	margin-top: 10px;
 	margin-left: 40px;
@@ -515,11 +534,4 @@ button {
 
 .artist {
 	display: inline;
-}
-
-.soundvolume {
-	width: 120px;
-	margin-top: 34px;
-	border: 2px solid black;
-	height: 20px;
 }
