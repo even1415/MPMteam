@@ -38,7 +38,7 @@
 							공지사항 </a></li>
 					<li menu="[object Object]"><a href="${pageContext.request.contextPath}/board/communityList" class="">
 							커뮤니티</a></li>
-					<li menu="[object Object]"><a href="" class="">
+					<li menu="[object Object]"><a href="${pageContext.request.contextPath}/music/musicMain" class="">
 							음원차트</a></li>
 				</ul>
 			</nav>
