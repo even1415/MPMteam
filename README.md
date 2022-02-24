@@ -21,6 +21,8 @@
 ### 대표화면 및 설명
 <img src="" width="600" height="400"><br>
 - 메인화면 : 홈페이지 설명 및 재생바 UI 표시 <br><br>
+- ![image](https://user-images.githubusercontent.com/53929997/155541935-2ca76380-ad6b-4ddd-b6c4-8b3e21b9294e.png)
+
 
 <img src="" width="600" height="400"><br>
 - 음원페이지 : 음원에 대한 정보 표시 및 재생바를 이용한 음원 스트리밍 기능 <br><br>
